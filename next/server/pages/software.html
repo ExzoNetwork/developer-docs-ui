@@ -1,0 +1,1025 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>Software - EXZO NETWORK</title><meta name="description"/><link rel="icon" href="/favicon.svg" sizes="any"/><meta name="next-head-count" content="5"/><script>
+  let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+  updateMode()
+  darkModeMediaQuery.addEventListener('change', updateModeWithoutTransitions)
+  window.addEventListener('storage', updateModeWithoutTransitions)
+
+  function updateMode() {
+    let isSystemDarkMode = darkModeMediaQuery.matches
+    let isDarkMode = window.localStorage.isDarkMode === 'true' || (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
+
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
+    if (isDarkMode === isSystemDarkMode) {
+      delete window.localStorage.isDarkMode
+    }
+  }
+
+  function disableTransitionsTemporarily() {
+    document.documentElement.classList.add('[&_*]:!transition-none')
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('[&_*]:!transition-none')
+    }, 0)
+  }
+
+  function updateModeWithoutTransitions() {
+    disableTransitionsTemporarily()
+    updateMode()
+  }
+</script><link rel="preload" href="/_next/static/css/6b34a2321c6c4eef.css" as="style"/><link rel="stylesheet" href="/_next/static/css/6b34a2321c6c4eef.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-4faf4a0c84411cba.js" defer=""></script><script src="/_next/static/chunks/framework-2c79e2a64abdb08b.js" defer=""></script><script src="/_next/static/chunks/main-32b453998ded9c12.js" defer=""></script><script src="/_next/static/chunks/pages/_app-490bc1a5cd828e78.js" defer=""></script><script src="/_next/static/chunks/pages/software-241aee8dd3412632.js" defer=""></script><script src="/_next/static/yAxsx7lFrlH2wGZWlIy3B/_buildManifest.js" defer=""></script><script src="/_next/static/yAxsx7lFrlH2wGZWlIy3B/_ssgManifest.js" defer=""></script></head><body class="bg-white antialiased dark:bg-zinc-900"><div id="__next"><div class="lg:ml-72 xl:ml-80"><header class="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex"><div class="contents lg:pointer-events-auto lg:block lg:w-72 lg:overflow-y-auto lg:border-r lg:border-zinc-900/10 lg:px-6 lg:pb-8 lg:pt-4 lg:dark:border-white/10 xl:w-80"><div class="hidden lg:flex"><a aria-label="Home" href="/"><svg width="171" height="18" viewBox="0 0 171 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_9_291)"><path d="M28.02 9.53994L29.2411 8.31075H25.7099V9.53994H28.02ZM30.0656 4.49799H23.4697V13.4936H30.0656V12.1549H24.9087V5.83679H30.0656V4.49799Z" fill="#11141A" class="dark:fill-white"></path><path d="M101.751 9.53994L102.972 8.31075H99.4411V9.53994H101.751ZM103.797 4.49799H97.2012V13.4936H103.797V12.1549H98.64V5.83679H103.797V4.49799Z" fill="#11141A" class="dark:fill-white"></path><path d="M34.4763 4.17484H36.0273L36.1565 4.23987L38.5476 7.36208L40.9386 4.23987L41.0678 4.17484H42.6189L42.6832 4.23987L39.3876 8.46788L43.0709 13.2162L43.0067 13.2813H41.4557L41.3263 13.2162L38.5476 9.57367L35.7687 13.2162L35.6395 13.2813H34.0886L34.0239 13.2162L37.7074 8.46788L34.4117 4.23987L34.4763 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M47.137 4.17484H54.181L54.2457 4.23987L49.1404 11.9804H54.2457L54.3099 12.0584V13.2162L54.2457 13.2813H46.7493L46.6846 13.2162L51.7898 5.47577H47.137L47.0723 5.4107V4.23987L47.137 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M63.686 3.97971C66.3227 3.97971 68.4683 6.11319 68.4683 8.72805C68.4683 11.3429 66.3227 13.4764 63.686 13.4764C61.0493 13.4764 58.9038 11.3429 58.9038 8.72805C58.9038 6.11319 61.0493 3.97971 63.686 3.97971ZM63.686 5.34567C61.8635 5.34567 60.3901 6.85472 60.3901 8.72805C60.3901 10.6014 61.8635 12.1105 63.686 12.1105C65.5085 12.1105 66.9816 10.6014 66.9816 8.72805C66.9816 6.85472 65.5085 5.34567 63.686 5.34567Z" fill="#11141A" class="dark:fill-white"></path><path d="M141.886 3.97971C144.522 3.97971 146.668 6.11319 146.668 8.72805C146.668 11.3429 144.522 13.4764 141.886 13.4764C139.249 13.4764 137.104 11.3429 137.104 8.72805C137.104 6.11319 139.249 3.97971 141.886 3.97971ZM141.886 5.34567C140.063 5.34567 138.59 6.85472 138.59 8.72805C138.59 10.6014 140.063 12.1105 141.886 12.1105C143.708 12.1105 145.181 10.6014 145.181 8.72805C145.181 6.85472 143.708 5.34567 141.886 5.34567Z" fill="#11141A" class="dark:fill-white"></path><path d="M163.667 4.17484H164.83L164.895 4.23987V7.36208L168.578 4.23987L168.707 4.17484H170.388L170.452 4.23987L165.864 8.0776L170.969 13.2162L170.904 13.2813H169.224L169.095 13.2162L164.895 8.92319V13.2162L164.83 13.2813H163.667L163.602 13.2162V4.23987L163.667 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M108.823 4.17484H115.931L115.996 4.23987V5.4107L115.931 5.47577H113.023V13.2162L112.959 13.2813H111.796L111.731 13.2162V5.47577H108.823L108.758 5.4107V4.23987L108.823 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M120.48 4.17484H121.773L121.837 4.23987L123.905 11.1348L125.909 4.36997L125.973 4.30494H127.266L127.331 4.36997L129.333 11.1348L131.402 4.23987L131.466 4.17484H132.759L132.823 4.23987L130.045 13.2162L129.98 13.2813H128.752L128.687 13.2162L126.619 6.51649L124.552 13.2162L124.487 13.2813H123.259L123.194 13.2162L120.416 4.23987L120.48 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M89.4004 11.8059L83.6375 4.49792H82.3037V13.4936H83.6375V6.19345L89.4004 13.4936H90.7264V4.49792H89.4004V11.8059Z" fill="#11141A" class="dark:fill-white"></path><path d="M157.746 9.38414C157.858 9.2953 157.955 9.19841 158.035 9.10953C158.476 8.60881 158.717 7.9385 158.717 7.23583C158.717 5.8709 157.778 4.49792 155.973 4.49792H150.822V13.7615H152.193V5.64478H155.973C157.08 5.64478 157.569 6.44433 157.569 7.22774C157.569 7.64772 157.425 8.05156 157.176 8.33421C156.912 8.63303 156.543 8.80266 156.077 8.81879H154.649H152.587V9.96565H155.331L157.586 13.7454H159.014L156.711 9.87681C157.16 9.7718 157.497 9.57799 157.746 9.368V9.38414Z" fill="#11141A" class="dark:fill-white"></path><path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd" d="M7.1855 13.6256C6.42963 13.6256 5.69833 13.5223 5.00391 13.3279C5.08574 14.1893 5.24949 15.0437 5.49507 15.8802C8.03275 15.2642 10.3426 13.9233 12.1395 12.0105L12.1012 11.9705C10.7314 13.0096 9.03007 13.6256 7.18414 13.6256H7.1855Z" fill="black" class="dark:fill-white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M11.5687 2.24908L7.71304 0C6.58745 1.3726 5.74155 2.93676 5.20264 4.59875C8.16872 5.22444 10.7896 6.7996 12.7379 8.99772C13.8936 10.3014 14.8118 11.8228 15.4257 13.4931V4.49818H15.4244L11.5701 2.24908H11.5687Z" fill="url(#paint0_linear_9_291)" class="dark:fill-white"></path><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M6.54053 1.66239C6.54861 1.64855 6.55797 1.63472 6.56601 1.62088L6.54053 1.66239Z" fill="#A4A4A4" class="dark:fill-white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M5.19819 13.3899C3.50365 13.7496 1.73955 13.7923 0 13.4933L3.85702 15.7423L7.71404 17.9914L11.5697 15.7423L15.4267 13.4933C14.8128 11.8216 13.8946 10.3002 12.739 8.99783C10.7197 11.28 8.05785 12.7849 5.20091 13.3899H5.19819Z" fill="url(#paint1_linear_9_291)" class="dark:fill-white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.49891V13.4952C1.73955 13.7942 3.50366 13.7502 5.19819 13.3919C4.25131 10.484 4.29226 7.40396 5.20091 4.60089C5.74119 2.93887 6.58572 1.37471 7.71132 0.00210571L3.85429 2.25119L0 4.49891Z" fill="url(#paint2_linear_9_291)" class="dark:fill-white"></path><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M2.12738 7.83319C1.62257 9.7336 1.51069 11.736 1.80539 13.6819C2.94872 13.7246 4.08795 13.6254 5.19852 13.3898C4.25168 10.4819 4.29259 7.40186 5.20128 4.59875C5.74156 2.93676 6.5861 1.3726 7.71169 0C4.87383 1.85081 2.96509 4.6773 2.12738 7.83319Z" fill="url(#paint3_linear_9_291)" class="dark:fill-white"></path></g><defs><linearGradient id="paint0_linear_9_291" x1="17.0861" y1="12.1081" x2="6.04798" y2="0.0316813" gradientUnits="userSpaceOnUse"><stop stop-color="#11171F"></stop><stop offset="1" stop-color="#47484A"></stop></linearGradient><linearGradient id="paint1_linear_9_291" x1="16.4923" y1="11.3779" x2="-0.355658" y2="16.9553" gradientUnits="userSpaceOnUse"><stop stop-color="#11171F"></stop><stop offset="1" stop-color="#47484A"></stop></linearGradient><linearGradient id="paint2_linear_9_291" x1="0.34791" y1="15.2537" x2="6.01552" y2="-0.315784" gradientUnits="userSpaceOnUse"><stop stop-color="#11171F"></stop><stop offset="1" stop-color="#47484A"></stop></linearGradient><linearGradient id="paint3_linear_9_291" x1="4.67811" y1="0" x2="4.67811" y2="13.6916" gradientUnits="userSpaceOnUse"><stop stop-color="#11171F"></stop><stop offset="1" stop-color="#47484A" stop-opacity="0.49"></stop></linearGradient><clipPath id="clip0_9_291"><rect width="171" height="18" fill="white"></rect></clipPath></defs></svg></a></div><div class="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-12 px-4 transition sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80 backdrop-blur-sm dark:backdrop-blur lg:left-72 xl:left-80 bg-white/[var(--bg-opacity-light)] dark:bg-zinc-900/[var(--bg-opacity-dark)]" style="--bg-opacity-light:0.5;--bg-opacity-dark:0.2"><div class="absolute inset-x-0 top-full h-px transition bg-zinc-900/7.5 dark:bg-white/7.5"></div><div class="hidden lg:block lg:max-w-md lg:flex-auto"><button type="button" class="hidden h-8 w-full items-center gap-2 rounded-full bg-white pl-2 pr-3 text-sm text-zinc-500 ring-1 ring-zinc-900/10 transition hover:ring-zinc-900/20 dark:bg-white/5 dark:text-zinc-400 dark:ring-inset dark:ring-white/10 dark:hover:ring-white/20 lg:flex focus:[&amp;:not(:focus-visible)]:outline-none"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" d="M12.01 12a4.25 4.25 0 1 0-6.02-6 4.25 4.25 0 0 0 6.02 6Zm0 0 3.24 3.25"></path></svg>Find something...<kbd class="ml-auto text-2xs text-zinc-400 dark:text-zinc-500"><kbd class="font-sans"></kbd><kbd class="font-sans">K</kbd></kbd></button></div><div class="flex items-center gap-5 lg:hidden"><button type="button" class="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5" aria-label="Toggle navigation"><svg viewBox="0 0 10 9" fill="none" stroke-linecap="round" aria-hidden="true" class="w-2.5 stroke-zinc-900 dark:stroke-white"><path d="M.5 1h9M.5 8h9M.5 4.5h9"></path></svg></button><a aria-label="Home" href="/"><svg width="171" height="18" viewBox="0 0 171 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_9_291)"><path d="M28.02 9.53994L29.2411 8.31075H25.7099V9.53994H28.02ZM30.0656 4.49799H23.4697V13.4936H30.0656V12.1549H24.9087V5.83679H30.0656V4.49799Z" fill="#11141A" class="dark:fill-white"></path><path d="M101.751 9.53994L102.972 8.31075H99.4411V9.53994H101.751ZM103.797 4.49799H97.2012V13.4936H103.797V12.1549H98.64V5.83679H103.797V4.49799Z" fill="#11141A" class="dark:fill-white"></path><path d="M34.4763 4.17484H36.0273L36.1565 4.23987L38.5476 7.36208L40.9386 4.23987L41.0678 4.17484H42.6189L42.6832 4.23987L39.3876 8.46788L43.0709 13.2162L43.0067 13.2813H41.4557L41.3263 13.2162L38.5476 9.57367L35.7687 13.2162L35.6395 13.2813H34.0886L34.0239 13.2162L37.7074 8.46788L34.4117 4.23987L34.4763 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M47.137 4.17484H54.181L54.2457 4.23987L49.1404 11.9804H54.2457L54.3099 12.0584V13.2162L54.2457 13.2813H46.7493L46.6846 13.2162L51.7898 5.47577H47.137L47.0723 5.4107V4.23987L47.137 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M63.686 3.97971C66.3227 3.97971 68.4683 6.11319 68.4683 8.72805C68.4683 11.3429 66.3227 13.4764 63.686 13.4764C61.0493 13.4764 58.9038 11.3429 58.9038 8.72805C58.9038 6.11319 61.0493 3.97971 63.686 3.97971ZM63.686 5.34567C61.8635 5.34567 60.3901 6.85472 60.3901 8.72805C60.3901 10.6014 61.8635 12.1105 63.686 12.1105C65.5085 12.1105 66.9816 10.6014 66.9816 8.72805C66.9816 6.85472 65.5085 5.34567 63.686 5.34567Z" fill="#11141A" class="dark:fill-white"></path><path d="M141.886 3.97971C144.522 3.97971 146.668 6.11319 146.668 8.72805C146.668 11.3429 144.522 13.4764 141.886 13.4764C139.249 13.4764 137.104 11.3429 137.104 8.72805C137.104 6.11319 139.249 3.97971 141.886 3.97971ZM141.886 5.34567C140.063 5.34567 138.59 6.85472 138.59 8.72805C138.59 10.6014 140.063 12.1105 141.886 12.1105C143.708 12.1105 145.181 10.6014 145.181 8.72805C145.181 6.85472 143.708 5.34567 141.886 5.34567Z" fill="#11141A" class="dark:fill-white"></path><path d="M163.667 4.17484H164.83L164.895 4.23987V7.36208L168.578 4.23987L168.707 4.17484H170.388L170.452 4.23987L165.864 8.0776L170.969 13.2162L170.904 13.2813H169.224L169.095 13.2162L164.895 8.92319V13.2162L164.83 13.2813H163.667L163.602 13.2162V4.23987L163.667 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M108.823 4.17484H115.931L115.996 4.23987V5.4107L115.931 5.47577H113.023V13.2162L112.959 13.2813H111.796L111.731 13.2162V5.47577H108.823L108.758 5.4107V4.23987L108.823 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M120.48 4.17484H121.773L121.837 4.23987L123.905 11.1348L125.909 4.36997L125.973 4.30494H127.266L127.331 4.36997L129.333 11.1348L131.402 4.23987L131.466 4.17484H132.759L132.823 4.23987L130.045 13.2162L129.98 13.2813H128.752L128.687 13.2162L126.619 6.51649L124.552 13.2162L124.487 13.2813H123.259L123.194 13.2162L120.416 4.23987L120.48 4.17484Z" fill="#11141A" class="dark:fill-white"></path><path d="M89.4004 11.8059L83.6375 4.49792H82.3037V13.4936H83.6375V6.19345L89.4004 13.4936H90.7264V4.49792H89.4004V11.8059Z" fill="#11141A" class="dark:fill-white"></path><path d="M157.746 9.38414C157.858 9.2953 157.955 9.19841 158.035 9.10953C158.476 8.60881 158.717 7.9385 158.717 7.23583C158.717 5.8709 157.778 4.49792 155.973 4.49792H150.822V13.7615H152.193V5.64478H155.973C157.08 5.64478 157.569 6.44433 157.569 7.22774C157.569 7.64772 157.425 8.05156 157.176 8.33421C156.912 8.63303 156.543 8.80266 156.077 8.81879H154.649H152.587V9.96565H155.331L157.586 13.7454H159.014L156.711 9.87681C157.16 9.7718 157.497 9.57799 157.746 9.368V9.38414Z" fill="#11141A" class="dark:fill-white"></path><path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd" d="M7.1855 13.6256C6.42963 13.6256 5.69833 13.5223 5.00391 13.3279C5.08574 14.1893 5.24949 15.0437 5.49507 15.8802C8.03275 15.2642 10.3426 13.9233 12.1395 12.0105L12.1012 11.9705C10.7314 13.0096 9.03007 13.6256 7.18414 13.6256H7.1855Z" fill="black" class="dark:fill-white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M11.5687 2.24908L7.71304 0C6.58745 1.3726 5.74155 2.93676 5.20264 4.59875C8.16872 5.22444 10.7896 6.7996 12.7379 8.99772C13.8936 10.3014 14.8118 11.8228 15.4257 13.4931V4.49818H15.4244L11.5701 2.24908H11.5687Z" fill="url(#paint0_linear_9_291)" class="dark:fill-white"></path><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M6.54053 1.66239C6.54861 1.64855 6.55797 1.63472 6.56601 1.62088L6.54053 1.66239Z" fill="#A4A4A4" class="dark:fill-white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M5.19819 13.3899C3.50365 13.7496 1.73955 13.7923 0 13.4933L3.85702 15.7423L7.71404 17.9914L11.5697 15.7423L15.4267 13.4933C14.8128 11.8216 13.8946 10.3002 12.739 8.99783C10.7197 11.28 8.05785 12.7849 5.20091 13.3899H5.19819Z" fill="url(#paint1_linear_9_291)" class="dark:fill-white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.49891V13.4952C1.73955 13.7942 3.50366 13.7502 5.19819 13.3919C4.25131 10.484 4.29226 7.40396 5.20091 4.60089C5.74119 2.93887 6.58572 1.37471 7.71132 0.00210571L3.85429 2.25119L0 4.49891Z" fill="url(#paint2_linear_9_291)" class="dark:fill-white"></path><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M2.12738 7.83319C1.62257 9.7336 1.51069 11.736 1.80539 13.6819C2.94872 13.7246 4.08795 13.6254 5.19852 13.3898C4.25168 10.4819 4.29259 7.40186 5.20128 4.59875C5.74156 2.93676 6.5861 1.3726 7.71169 0C4.87383 1.85081 2.96509 4.6773 2.12738 7.83319Z" fill="url(#paint3_linear_9_291)" class="dark:fill-white"></path></g><defs><linearGradient id="paint0_linear_9_291" x1="17.0861" y1="12.1081" x2="6.04798" y2="0.0316813" gradientUnits="userSpaceOnUse"><stop stop-color="#11171F"></stop><stop offset="1" stop-color="#47484A"></stop></linearGradient><linearGradient id="paint1_linear_9_291" x1="16.4923" y1="11.3779" x2="-0.355658" y2="16.9553" gradientUnits="userSpaceOnUse"><stop stop-color="#11171F"></stop><stop offset="1" stop-color="#47484A"></stop></linearGradient><linearGradient id="paint2_linear_9_291" x1="0.34791" y1="15.2537" x2="6.01552" y2="-0.315784" gradientUnits="userSpaceOnUse"><stop stop-color="#11171F"></stop><stop offset="1" stop-color="#47484A"></stop></linearGradient><linearGradient id="paint3_linear_9_291" x1="4.67811" y1="0" x2="4.67811" y2="13.6916" gradientUnits="userSpaceOnUse"><stop stop-color="#11171F"></stop><stop offset="1" stop-color="#47484A" stop-opacity="0.49"></stop></linearGradient><clipPath id="clip0_9_291"><rect width="171" height="18" fill="white"></rect></clipPath></defs></svg></a></div><div class="flex items-center gap-5"><nav class="hidden md:block"><ul role="list" class="flex items-center gap-8"><li><a class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/">API</a></li><li><a class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/software#">Documentation</a></li><li><a class="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/software#">Support</a></li></ul></nav><div class="hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-white/15"></div><div class="flex gap-4"><div class="contents lg:hidden"><button type="button" class="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5 lg:hidden focus:[&amp;:not(:focus-visible)]:outline-none" aria-label="Find something..."><svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 stroke-zinc-900 dark:stroke-white"><path stroke-linecap="round" stroke-linejoin="round" d="M12.01 12a4.25 4.25 0 1 0-6.02-6 4.25 4.25 0 0 0 6.02 6Zm0 0 3.24 3.25"></path></svg></button></div><button type="button" class="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5" aria-label="Toggle dark mode"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-5 w-5 stroke-zinc-900 dark:hidden"><path d="M12.5 10a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"></path><path stroke-linecap="round" d="M10 5.5v-1M13.182 6.818l.707-.707M14.5 10h1M13.182 13.182l.707.707M10 15.5v-1M6.11 13.889l.708-.707M4.5 10h1M6.11 6.111l.708.707"></path></svg><svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="hidden h-5 w-5 stroke-white dark:block"><path d="M15.224 11.724a5.5 5.5 0 0 1-6.949-6.949 5.5 5.5 0 1 0 6.949 6.949Z"></path></svg></button></div><div class="hidden min-[416px]:contents"><a class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-400/10 dark:text-emerald-400 dark:ring-1 dark:ring-inset dark:ring-emerald-400/20 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300" href="/software#">Sign in</a></div></div></div><nav class="hidden lg:mt-10 lg:block"><ul role="list"><li class="md:hidden"><a class="block py-1 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/">API</a></li><li class="md:hidden"><a class="block py-1 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/software#">Documentation</a></li><li class="md:hidden"><a class="block py-1 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/software#">Support</a></li><li class="relative mt-6 md:mt-0"><h2 class="text-xs font-semibold text-zinc-900 dark:text-white">GUIDES</h2><div class="relative mt-3 pl-2"><div class="absolute inset-x-0 top-0 bg-zinc-800/2.5 will-change-transform dark:bg-white/2.5" style="border-radius:8px;height:32px;top:352px;opacity:0"></div><div class="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"></div><div class="absolute left-2 h-6 w-px bg-emerald-500" style="top:356px;opacity:1"></div><ul role="list" class="border-l border-transparent"><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/"><span class="truncate">Introduction</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/industry_use_cases"><span class="truncate">Industry use cases</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/wallets"><span class="truncate">Wallets</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/staking"><span class="truncate">Staking</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/grants"><span class="truncate">Grants</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/command_line"><span class="truncate">Command Line</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/developing_native_exzo"><span class="truncate">Developing on native Exzo</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/integrating"><span class="truncate">Integrating</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/validating"><span class="truncate">Validating</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/clusters"><span class="truncate">Clusters</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/architecture"><span class="truncate">Architecture</span></a></li><li class="relative"><a aria-current="page" class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-900 dark:text-white" href="/software"><span class="truncate">Software</span></a><ul role="list" style="opacity:1"><li><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/software#vision_doc"><span class="truncate">Vision Documentation</span></a></li><li><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/software#quick_start"><span class="truncate">Quick Start</span></a></li><li><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/software#specifications"><span class="truncate">Specifications</span></a></li><li><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/software#tech_perspective"><span class="truncate">Technical Perspective</span></a></li><li><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/software#user_stories"><span class="truncate">User Stories</span></a></li></ul></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/writing_programs"><span class="truncate">Writing Programs</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/performance_reports"><span class="truncate">Performance Reports</span></a></li></ul></div></li><li class="relative mt-6"><h2 class="text-xs font-semibold text-zinc-900 dark:text-white">TUTORIALS</h2><div class="relative mt-3 pl-2"><div class="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"></div><ul role="list" class="border-l border-transparent"><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/nft_tutorials"><span class="truncate">NFT Tutorials</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/solidity_tutorials"><span class="truncate">Solidity Tutorials</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/setup_metamask_mainnet"><span class="truncate">Set up MetaMask (Mainnet)</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/setup_metamask_testnet"><span class="truncate">Set up MetaMask (Testnet)</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/wallet_metamask"><span class="truncate">Import a Wallet into MetaMask</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/create_metamask_wallet"><span class="truncate">Create new MetaMask Wallet</span></a></li></ul></div></li><li class="relative mt-6"><h2 class="text-xs font-semibold text-zinc-900 dark:text-white">LINKS</h2><div class="relative mt-3 pl-2"><div class="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"></div><ul role="list" class="border-l border-transparent"><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/smart_contract_audits"><span class="truncate">Smart Contract Audits</span></a></li><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/links"><span class="truncate">Links</span></a></li></ul></div></li><li class="relative mt-6"><h2 class="text-xs font-semibold text-zinc-900 dark:text-white">POLICIES AND DIACLAIMERS</h2><div class="relative mt-3 pl-2"><div class="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"></div><ul role="list" class="border-l border-transparent"><li class="relative"><a class="flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white" href="/disclaimer"><span class="truncate">Disclaimer</span></a></li></ul></div></li><li class="sticky bottom-0 z-10 mt-6 min-[416px]:hidden"><a class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-900 py-1 px-3 text-white hover:bg-zinc-700 dark:bg-emerald-500 dark:text-white dark:hover:bg-emerald-400 w-full" href="/software#">Sign in</a></li></ul></nav></div></header><div class="relative px-4 pt-14 sm:px-6 lg:px-8"><main class="py-16"><article class="prose dark:prose-invert"><h1 class="border-b border-zinc-900/5 dark:border-white/5 xl:max-w-none pb-5 mb-7">Software</h1>
+<div class="xl:max-w-none"><h2 id="vision_doc" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#vision_doc">Vision Documentation</a></h2><div class="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-4 dark:border-white/5 sm:grid-cols-2 xl:grid-cols-4"></div></div>
+<p>Exzo Network project includes two main components</p>
+<ul>
+<li>
+<p>A web-based application that will provide a platform for decentralized cross-chain conversion of digital assets.</p>
+</li>
+<li>
+<p>A blockchain network based on Proof-of-Stake consensus mechanism that will provide an ecosystem for creating customized blockchains, deploying smart contracts, with low fees and high throughput.</p>
+</li>
+</ul>
+<p>Exzo Network project will be aimed to including full support of Ethereum based dApps.</p>
+<p>All critical components of the system will be reused as much as possible from existing open source projects to reduce time-to-market and costs of implementation.</p>
+<h2 id="ecosystem-needs-and-requirements" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#ecosystem-needs-and-requirements">Ecosystem Needs &amp; Requirements</a></h2>
+<p>Cryptocurrencies have an isolated existence. Designed to be decentralized and work independently, they either have their own separate blockchain ecosystem or run off of other larger ones such as Ethereum and Binance Smart Chain.</p>
+<p>This essentially means that one token cannot interact with another if they run on different ecosystems. As more and more tokens are launched coupled with increased interest due to DeFi, the struggle is getting more serious.</p>
+<p>Exzo Network project is committed to promote adoption of cryptocurrencies by providing products that are useful and easy to use.</p>
+<p>First of all, the cross-chain swap solution should solve the problem of converting tokens between different blockchains which can now be complicated for the general user.</p>
+<p>There is another problem that is relevant for small and medium businesses who want to implement blockchain and dApps into their operations. Using existing solutions puts limitations on business applicability and is often accompanied with high transactional costs. Custom development of a decentralized application or the blockchain network can be costly and time consuming. By implementing the innovative blockchain architecture Exzo Network native blockchain network should allow cheap, simple and fast creation of custom blockchains with low-cost transactions for businesses that need it.</p>
+<p>Businesses that already run their applications on Ethereum struggle with high fees and low TPS rate. They need a cheaper and faster alternative to optimize their operations. Exzo Network blockchain should provide full support for Ethereum based smart contracts written in Solidity for the smooth and efficient transition from Ethereum to Exzo Network blockchain.</p>
+<h2 id="solution-overview" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#solution-overview">Solution Overview</a></h2>
+<p>Exzo Network will be the platform that provides a wide range of blockchain and DeFi opportunities for users from swapping tokens between different blockchains and earn profits from staking to creating fully-functional dApps written in Solidity and fully compatible with Ethereum Virtual Machine (EVM).</p>
+<p>Initially Exzo Network ecosystem will be a fork of Fantom Network (<a href="https://fantom.foundation/">https://fantom.foundation/</a>). This will give faster time to market, robust technology and feature-rich solutions.</p>
+<p>Main components of the platform will include:</p>
+<ul>
+<li>Cross-chain swap application</li>
+<li>Main blockchain network supporting Solidity dApps</li>
+<li>Governance token</li>
+<li>Staking module</li>
+<li>Blockchain explorer</li>
+<li>Wallet</li>
+</ul>
+<p>In later versions, it is planned to introduce enterprise solutions for managing, tracking, and securing private data such as healthcare data/patient data, data for private sector industries, government, etc.</p>
+<h2 id="major-features" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#major-features">Major Features</a></h2>
+<h3>Cross-chain swap app</h3>
+<p>Web application integrated with open source liquidity provider API&#x27;s that allows to swap tokens between networks supported by these providers from the custom Exzo Network web interface.</p>
+<h3>PoS blockchain network</h3>
+<p>The solution forked from Fantom blockchain network that will allow for staking and natively building swap bridges between multiple blockchains. The network will be governed by the native Exzo Network token providing the ecosystem for creating swap liquidity pools.</p>
+<h3>Wallet Application</h3>
+<p>Mobile client for storing all supported tokens and accessing DeFi features provided by the network including swaps and staking.</p>
+<h3>EVM compatible Solidity dApps</h3>
+<p>Full support of Ethereum based smart contracts written in Solidity to allow for dApp development and transition of users from Ethereum to Exzo Network blockchain.</p>
+<h3>Blockchain Explorer</h3>
+<p>Web application integrated with the native network that allows to track and search transactions on the ledger.</p>
+<h2 id="scope-and-limitations" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#scope-and-limitations">Scope &amp; Limitations</a></h2>
+<p>The initial version of Exzo Network project will focus on creating the fastest possible value for end users by providing Exzo Network token swap application integrated with open source liquidity providers via their API&#x27;s.</p>
+<p>In parallel the efforts will be directed to the development of the core functionality of the platform that covers the MVP features and forms the basis for further development. The MVP release will include a forked and Exzo Network branded set of applications from Fantom blockchain ecosystem.</p>
+<p>For the budget optimization the software will not have features for the general consumer, such as:</p>
+<ul>
+<li>Ability to swap tokens that are not supported by open source liquidity providers (initial version).</li>
+<li>Ability to swap tokens between networks that are not supported by Fantom blockchain at the time of the fork.</li>
+<li>Custom features that are not supported by Fantom blockchain at the time of the fork.</li>
+</ul>
+<h2 id="other-needs" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#other-needs">Other Needs</a></h2>
+<p>The solution will initially run on AWS cloud infrastructure utilizing message-based architecture and modern technologies like Docker, RabbitMQ, Redis, Lerna, etc.</p>
+<h2 id="accessibility" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#accessibility">Accessibility</a></h2>
+<p>Exzo Network platform will be designed to be as widely accessible as possible. Therefore, it should be compatible with the latest versions of Google Chrome, Firefox, Safari, Edge, Brave, and Internet Explorer browsers.</p>
+<div class="xl:max-w-none"><h2 id="quick_start" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#quick_start">Quick Start</a></h2><div class="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-4 dark:border-white/5 sm:grid-cols-2 xl:grid-cols-4"></div></div>
+<div class="my-6 flex gap-2.5 rounded-2xl border border-emerald-500/20 bg-emerald-50/50 p-4 leading-6 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/5 dark:text-emerald-200 dark:[--tw-prose-links-hover:theme(colors.emerald.300)] dark:[--tw-prose-links:theme(colors.white)]"><svg viewBox="0 0 16 16" aria-hidden="true" class="mt-1 h-4 w-4 flex-none fill-emerald-500 stroke-white dark:fill-emerald-200/20 dark:stroke-emerald-200"><circle cx="8" cy="8" r="8" stroke-width="0"></circle><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 7.75h1.5v3.5"></path><circle cx="8" cy="4" r=".5" fill="none"></circle></svg><div class="[&amp;&gt;:first-child]:mt-0 [&amp;&gt;:last-child]:mb-0"><p>Good to know: A quick start guide can be good to help folks get up and running
+with your API in a few steps. Some people prefer diving in with the basics
+rather than meticulously reading every page of documentation!</p></div></div>
+<h2 id="get-your-api-keys" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#get-your-api-keys">Get your API keys</a></h2>
+<p>Your API requests are authenticated using API keys. Any request that doesn&#x27;t include an API key will return an error.</p>
+<p>You can generate an API key from your Dashboard at any time.</p>
+<h2 id="install-the-library" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#install-the-library">Install the library</a></h2>
+<p>The best way to interact with our API is to use one of our official libraries:</p>
+<button type="button" aria-hidden="true" style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0"></button><div class="not-prose my-6 overflow-hidden rounded-2xl bg-zinc-900 shadow-md dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><div class="-mb-px flex gap-4 text-xs font-medium" role="tablist" aria-orientation="horizontal"><button class="border-b py-3 transition focus:[&amp;:not(:focus-visible)]:outline-none border-emerald-500 text-emerald-400" id="headlessui-tabs-tab-:R6c2td6:" role="tab" type="button" aria-selected="true" tabindex="0" data-headlessui-state="selected">JavaScript</button><button class="border-b py-3 transition focus:[&amp;:not(:focus-visible)]:outline-none border-transparent text-zinc-400 hover:text-zinc-300" id="headlessui-tabs-tab-:Rac2td6:" role="tab" type="button" aria-selected="false" tabindex="-1" data-headlessui-state="">Python</button></div></div><div><div id="headlessui-tabs-panel-:R1k2td6:" role="tabpanel" tabindex="0" data-headlessui-state="selected"><div class="group dark:bg-white/2.5"><div class="relative"><pre class="overflow-x-auto p-4 text-xs text-white"><code class="language-bash"><span><span style="color: var(--shiki-token-comment)"># Install via NPM</span></span>
+<span><span style="color: var(--shiki-color-text)">npm install --save my-api</span></span>
+<span></span></code></pre><button type="button" class="group/button absolute right-4 top-3.5 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="h-5 w-5 fill-zinc-500/20 stroke-zinc-500 transition-colors group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><span id="headlessui-tabs-panel-:R2k2td6:" role="tabpanel" tabindex="-1" style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0"></span></div></div>
+<div class="my-6 flex gap-2.5 rounded-2xl border border-emerald-500/20 bg-emerald-50/50 p-4 leading-6 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/5 dark:text-emerald-200 dark:[--tw-prose-links-hover:theme(colors.emerald.300)] dark:[--tw-prose-links:theme(colors.white)]"><svg viewBox="0 0 16 16" aria-hidden="true" class="mt-1 h-4 w-4 flex-none fill-emerald-500 stroke-white dark:fill-emerald-200/20 dark:stroke-emerald-200"><circle cx="8" cy="8" r="8" stroke-width="0"></circle><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 7.75h1.5v3.5"></path><circle cx="8" cy="4" r=".5" fill="none"></circle></svg><div class="[&amp;&gt;:first-child]:mt-0 [&amp;&gt;:last-child]:mb-0"><p>Good to know: Using tabs to separate out different languages is a great way to
+present technical examples or code documentation without cramming your docs
+with extra sections or pages per language.</p></div></div>
+<h2 id="make-your-first-request" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#make-your-first-request">Make your first request</a></h2>
+<p>To make your first request, send an authenticated request to the pets endpoint. This will create a <code>pet</code>, which is nice.</p>
+<div class="my-6 flex gap-2.5 rounded-2xl border border-emerald-500/20 bg-emerald-50/50 p-4 leading-6 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/5 dark:text-emerald-200 dark:[--tw-prose-links-hover:theme(colors.emerald.300)] dark:[--tw-prose-links:theme(colors.white)]"><svg viewBox="0 0 16 16" aria-hidden="true" class="mt-1 h-4 w-4 flex-none fill-emerald-500 stroke-white dark:fill-emerald-200/20 dark:stroke-emerald-200"><circle cx="8" cy="8" r="8" stroke-width="0"></circle><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 7.75h1.5v3.5"></path><circle cx="8" cy="4" r=".5" fill="none"></circle></svg><div class="[&amp;&gt;:first-child]:mt-0 [&amp;&gt;:last-child]:mb-0"><p>Good to know: You can use the API Method block to fully document an API
+method. You can also sync your API blocks with an OpenAPI file or URL to
+auto-populate them.</p></div></div>
+<p>Take a look at how you might call this method using our official libraries, or via <code>curl</code>:</p>
+<div class="flex items-center gap-x-3"><span class="font-mono text-[0.625rem] font-semibold leading-6 rounded-lg px-1.5 ring-1 ring-inset ring-sky-300 bg-sky-400/10 text-sky-500 dark:ring-sky-400/30 dark:bg-sky-400/10 dark:text-sky-400">POST</span><span class="h-0.5 w-0.5 rounded-full bg-zinc-300 dark:bg-zinc-600"></span><span class="font-mono text-xs text-zinc-400">https://api.myapi.com/v1/pet</span></div><h2 id="create-pet" class="mt-2 scroll-mt-32"><a class="group text-inherit no-underline hover:text-inherit" href="/software#create-pet">Create pet</a></h2>
+<div class="grid grid-cols-1 items-start gap-x-16 gap-y-10 xl:max-w-none xl:grid-cols-2"><div class="[&amp;&gt;:first-child]:mt-0 [&amp;&gt;:last-child]:mb-0"><p>Creates a new pet.</p><h3>Required attributes</h3><div class="my-6"><ul role="list" class="m-0 max-w-[calc(theme(maxWidth.lg)-theme(spacing.8))] list-none divide-y divide-zinc-900/5 p-0 dark:divide-white/5"><li class="m-0 px-0 py-4 first:pt-0 last:pb-0"><dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2"><dt class="sr-only">Name</dt><dd><code>name</code></dd><dt class="sr-only">Type</dt><dd class="font-mono text-xs text-zinc-400 dark:text-zinc-500">string</dd><dt class="sr-only">Description</dt><dd class="w-full flex-none [&amp;&gt;:first-child]:mt-0 [&amp;&gt;:last-child]:mb-0"><p>The name of the pet</p></dd></dl></li></ul></div><h3>Optional attributes</h3><div class="my-6"><ul role="list" class="m-0 max-w-[calc(theme(maxWidth.lg)-theme(spacing.8))] list-none divide-y divide-zinc-900/5 p-0 dark:divide-white/5"><li class="m-0 px-0 py-4 first:pt-0 last:pb-0"><dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2"><dt class="sr-only">Name</dt><dd><code>owner_id</code></dd><dt class="sr-only">Type</dt><dd class="font-mono text-xs text-zinc-400 dark:text-zinc-500">string</dd><dt class="sr-only">Description</dt><dd class="w-full flex-none [&amp;&gt;:first-child]:mt-0 [&amp;&gt;:last-child]:mb-0"><p>The <code>id</code> of the user who owns the pet</p></dd></dl></li><li class="m-0 px-0 py-4 first:pt-0 last:pb-0"><dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2"><dt class="sr-only">Name</dt><dd><code>species</code></dd><dt class="sr-only">Type</dt><dd class="font-mono text-xs text-zinc-400 dark:text-zinc-500">string</dd><dt class="sr-only">Description</dt><dd class="w-full flex-none [&amp;&gt;:first-child]:mt-0 [&amp;&gt;:last-child]:mb-0"><p>The species of the pet</p></dd></dl></li><li class="m-0 px-0 py-4 first:pt-0 last:pb-0"><dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2"><dt class="sr-only">Name</dt><dd><code>breed</code></dd><dt class="sr-only">Type</dt><dd class="font-mono text-xs text-zinc-400 dark:text-zinc-500">string</dd><dt class="sr-only">Description</dt><dd class="w-full flex-none [&amp;&gt;:first-child]:mt-0 [&amp;&gt;:last-child]:mb-0"><p>The breed of the pet</p></dd></dl></li></ul></div></div><div class="[&amp;&gt;:first-child]:mt-0 [&amp;&gt;:last-child]:mb-0 xl:sticky xl:top-24"><button type="button" aria-hidden="true" style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0"></button><div class="not-prose my-6 overflow-hidden rounded-2xl bg-zinc-900 shadow-md dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="mr-auto pt-3 text-xs font-semibold text-white">Request</h3><div class="-mb-px flex gap-4 text-xs font-medium" role="tablist" aria-orientation="horizontal"><button class="border-b py-3 transition focus:[&amp;:not(:focus-visible)]:outline-none border-emerald-500 text-emerald-400" id="headlessui-tabs-tab-:R36c3bd6:" role="tab" type="button" aria-selected="true" tabindex="0" data-headlessui-state="selected">cURL</button><button class="border-b py-3 transition focus:[&amp;:not(:focus-visible)]:outline-none border-transparent text-zinc-400 hover:text-zinc-300" id="headlessui-tabs-tab-:R56c3bd6:" role="tab" type="button" aria-selected="false" tabindex="-1" data-headlessui-state="">JavaScript</button><button class="border-b py-3 transition focus:[&amp;:not(:focus-visible)]:outline-none border-transparent text-zinc-400 hover:text-zinc-300" id="headlessui-tabs-tab-:R76c3bd6:" role="tab" type="button" aria-selected="false" tabindex="-1" data-headlessui-state="">Python</button></div></div><div><div id="headlessui-tabs-panel-:Rqc3bd6:" role="tabpanel" tabindex="0" data-headlessui-state="selected"><div class="group dark:bg-white/2.5"><div class="flex h-9 items-center gap-2 border-y border-b-white/7.5 border-t-transparent bg-white/2.5 bg-zinc-900 px-4 dark:border-b-white/5 dark:bg-white/1"><div class="dark flex"><span class="font-mono text-[0.625rem] font-semibold leading-6 text-sky-500">POST</span></div><span class="h-0.5 w-0.5 rounded-full bg-zinc-500"></span><span class="font-mono text-xs text-zinc-400">https://api.myapi.com/v1/pet</span></div><div class="relative"><pre class="overflow-x-auto p-4 text-xs text-white"><code class="language-bash"><span><span style="color: var(--shiki-color-text)">curl https://api.myapi.com/v1/pet</span></span>
+<span><span style="color: var(--shiki-color-text)">-u YOUR_API_KEY:</span></span>
+<span><span style="color: var(--shiki-color-text)">-d name=</span><span style="color: var(--shiki-token-string-expression)">&#39;Wilson&#39;</span></span>
+<span><span style="color: var(--shiki-color-text)">-d species=</span><span style="color: var(--shiki-token-string-expression)">&#39;dog&#39;</span></span>
+<span><span style="color: var(--shiki-color-text)">-d owner_id=</span><span style="color: var(--shiki-token-string-expression)">&#39;sha7891bikojbkreuy&#39;</span></span>
+<span></span></code></pre><button type="button" class="group/button absolute right-4 top-3.5 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="h-5 w-5 fill-zinc-500/20 stroke-zinc-500 transition-colors group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div><span id="headlessui-tabs-panel-:R1ac3bd6:" role="tabpanel" tabindex="-1" style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0"></span><span id="headlessui-tabs-panel-:R1qc3bd6:" role="tabpanel" tabindex="-1" style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0"></span></div></div><div class="not-prose my-6 overflow-hidden rounded-2xl bg-zinc-900 shadow-md dark:ring-1 dark:ring-white/10"><div class="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-4 border-b border-zinc-700 bg-zinc-800 px-4 dark:border-zinc-800 dark:bg-transparent"><h3 class="mr-auto pt-3 text-xs font-semibold text-white">Response</h3></div><div class="group dark:bg-white/2.5"><div class="relative"><pre class="overflow-x-auto p-4 text-xs text-white"><code class="language-json"><span><span style="color: var(--shiki-color-text)">{</span></span>
+<span><span style="color: var(--shiki-color-text)">    </span><span style="color: var(--shiki-token-keyword)">&quot;name&quot;</span><span style="color: var(--shiki-color-text)">=</span><span style="color: var(--shiki-token-keyword)">&quot;Wilson&quot;</span><span style="color: var(--shiki-color-text)">,</span></span>
+<span><span style="color: var(--shiki-color-text)">    </span><span style="color: var(--shiki-token-keyword)">&quot;owner&quot;</span><span style="color: var(--shiki-token-punctuation)">:</span><span style="color: var(--shiki-color-text)"> {</span></span>
+<span><span style="color: var(--shiki-color-text)">        </span><span style="color: var(--shiki-token-keyword)">&quot;id&quot;</span><span style="color: var(--shiki-token-punctuation)">:</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-string-expression)">&quot;sha7891bikojbkreuy&quot;</span><span style="color: var(--shiki-token-punctuation)">,</span></span>
+<span><span style="color: var(--shiki-color-text)">        </span><span style="color: var(--shiki-token-keyword)">&quot;name&quot;</span><span style="color: var(--shiki-token-punctuation)">:</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-string-expression)">&quot;Samuel Passet&quot;</span><span style="color: var(--shiki-token-punctuation)">,</span></span>
+<span><span style="color: var(--shiki-color-text)">    </span><span style="color: var(--shiki-token-keyword)">&quot;species&quot;</span><span style="color: var(--shiki-token-punctuation)">:</span><span style="color: var(--shiki-color-text)"> </span><span style="color: var(--shiki-token-string-expression)">&quot;Dog&quot;</span><span style="color: var(--shiki-token-punctuation)">,</span><span style="color: var(--shiki-color-text)">}</span></span>
+<span><span style="color: var(--shiki-color-text)">    </span><span style="color: var(--shiki-token-string-expression)">&quot;breed&quot;</span><span style="color: var(--shiki-color-text)">: </span><span style="color: var(--shiki-token-string-expression)">&quot;Golden Retriever&quot;</span><span style="color: var(--shiki-token-punctuation)">,</span></span>
+<span><span style="color: var(--shiki-color-text)">}</span></span>
+<span></span></code></pre><button type="button" class="group/button absolute right-4 top-3.5 overflow-hidden rounded-full py-1 pl-2 pr-3 text-2xs font-medium opacity-0 backdrop-blur transition focus:opacity-100 group-hover:opacity-100 bg-white/5 hover:bg-white/7.5 dark:bg-white/2.5 dark:hover:bg-white/5"><span aria-hidden="false" class="pointer-events-none flex items-center gap-0.5 text-zinc-400 transition duration-300"><svg viewBox="0 0 20 20" aria-hidden="true" class="h-5 w-5 fill-zinc-500/20 stroke-zinc-500 transition-colors group-hover/button:stroke-zinc-400"><path stroke-width="0" d="M5.5 13.5v-5a2 2 0 0 1 2-2l.447-.894A2 2 0 0 1 9.737 4.5h.527a2 2 0 0 1 1.789 1.106l.447.894a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"></path><path fill="none" stroke-linejoin="round" d="M12.5 6.5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2m5 0-.447-.894a2 2 0 0 0-1.79-1.106h-.527a2 2 0 0 0-1.789 1.106L7.5 6.5m5 0-1 1h-3l-1-1"></path></svg>Copy</span><span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-emerald-400 transition duration-300 translate-y-1.5 opacity-0">Copied!</span></button></div></div></div></div></div>
+<div class="xl:max-w-none"><h2 id="specifications" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#specifications">Specifications</a></h2><div class="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-4 dark:border-white/5 sm:grid-cols-2 xl:grid-cols-4"></div></div>
+<h2 id="1-1-exzo-swap-main-page" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-1-exzo-swap-main-page">1.1 ExzoSwap: Main page</a></h2>
+<h3>1.1.1 Summary</h3>
+<p>As a Guest I want to view the main page so that I could navigate through the features of ExzoSwap app.</p>
+<h3>1.1.2. Acceptance criteria</h3>
+<h3>1.1.2.1. A user should be able to navigate to ExzoSwap application from the ExzoCoin (Exzo Network) website.</h3>
+<h3>1.1.2.2. The main page of ExzoSwap application should include the following elements in the header:</h3>
+<ul>
+<li>Exzo Network logo</li>
+<li>Bridges links dropdown menu</li>
+<li>Network selector dropdown menu</li>
+<li>Buy crypto button</li>
+<li>Connect Wallet button</li>
+<li>Language selector button</li>
+</ul>
+<h3>1.1.2.3. The swap widget should include:</h3>
+<ul>
+<li>Refresh button</li>
+<li>Settings button</li>
+<li>Source token selector</li>
+<li>Amount input field</li>
+<li>Target token selector</li>
+<li>Swap protocol selector</li>
+<li>Action buttons</li>
+<li>Swap rate and route indicator</li>
+</ul>
+<h3>1.1.3. UI Design</h3>
+<h2 id="1-2-exzo-swap-connect-a-wallet" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-2-exzo-swap-connect-a-wallet">1.2. ExzoSwap: Connect a wallet</a></h2>
+<h3>1.2.1. Summary</h3>
+<p>As a User I want to connect a wallet so that I could swap tokens on my existing crypto wallet.</p>
+<h3>1.2.2. Acceptance criteria</h3>
+<h3>1.2.2.1. Once a user clicks “Connect wallet” button the Connect wallet widget is displayed.</h3>
+<h3>1.2.2.2. A user should be able to:</h3>
+<ul>
+<li>Open Terms of service and Privacy policy pages</li>
+<li>Check the “I read and accept” confirmation checkbox</li>
+<li>Choose a network</li>
+<li>Select a wallet: Metamask or WalletConnect</li>
+</ul>
+<h3>1.2.2.3. Once a user selects a wallet the corresponding web3 app widget is displayed.</h3>
+<h3>1.2.2.4. A user selects an account and confirms the connection</h3>
+<h3>1.2.2.5. Once the connection is successful the account alias and wallet balance is displayed in the header.</h3>
+<h3>1.2.3. UI Design</h3>
+<h2 id="1-3-exzo-swap-buy-cryptocurrency-with-a-credit-card" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-3-exzo-swap-buy-cryptocurrency-with-a-credit-card">1.3. ExzoSwap: Buy cryptocurrency with a credit card</a></h2>
+<h3>1.3.1. Summary</h3>
+<p>As a User I want to buy cryptocurrency with a credit card so that I could convert fiat to crypto.</p>
+<h3>1.3.2. Acceptance criteria</h3>
+<h3>1.3.2.1. Upon clicking on the Buy Crypto button a user should be redirected to MoonPay payment gateway (<a href="https://buy.moonpay.io/">https://buy.moonpay.io/</a>).</h3>
+<h3>1.3.2.2. The payment gateway allows a user to select a cryptocurrency from a list, fill in the target wallet address and buy the selected cryptocurrency with a credit card.</h3>
+<h3>1.3.3. UI Design</h3>
+<h2 id="1-4-exzo-swap-transfer-coins-via-bridges" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-4-exzo-swap-transfer-coins-via-bridges">1.4. ExzoSwap: Transfer coins via bridges</a></h2>
+<h3>1.4.1. Summary</h3>
+<p>As a User I want to transfer coins via bridges so that I could move tokens from one blockchain to another.</p>
+<h3>1.4.2. Acceptance criteria</h3>
+<h3>1.4.2.1. A user should be able to move supported tokens between blockchains using bridges.</h3>
+<h3>1.4.2.2. Upon clicking on an item in the Bridges dropdown menu a webpage of the corresponding bridge is open in a new browser tab.</h3>
+<h3>1.4.2.3. The list of bridges:</h3>
+<ul>
+<li><a href="https://www.binance.org/en/bridge">https://www.binance.org/en/bridge</a></li>
+<li><a href="https://wallet.matic.network/bridge/">https://wallet.matic.network/bridge/</a></li>
+<li><a href="https://gateway.optimism.io/">https://gateway.optimism.io/</a></li>
+<li><a href="https://bridge.arbitrum.io/">https://bridge.arbitrum.io/</a></li>
+</ul>
+<h3>1.4.3. UI Design</h3>
+<h2 id="1-5-exzo-swap-select-the-chain-for-swap" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-5-exzo-swap-select-the-chain-for-swap">1.5. ExzoSwap: Select the chain for swap</a></h2>
+<h3>1.5.1. Summary</h3>
+<p>As a User I want to select the chain for swap so that I could choose the blockchain where I will perform the swap.</p>
+<h3>1.5.2. Acceptance criteria</h3>
+<h3>1.5.2.1. A user should be able to select a network where they want to swap tokens.</h3>
+<h3>1.5.2.2. The selection of a network affects the list of available tokens and protocols in the Swap parameters widget.</h3>
+<h3>1.5.2.3. The system should identify if the connected wallet is configured for the selected network and prompt a user to change wallet settings if the wallet network is different.</h3>
+<h3>1.5.3. UI Design</h3>
+<h2 id="1-6-exzo-swap-set-the-swap-parameters" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-6-exzo-swap-set-the-swap-parameters">1.6. ExzoSwap: Set the swap parameters</a></h2>
+<h3>1.6.1. Summary</h3>
+<p>As a User I want to set the swap parameters so that I could define the direction and the amount of the swap</p>
+<h3>1.6.2. Acceptance criteria</h3>
+<h3>1.6.2.1. A user should be able to select the source token from the dropdown list and the amount to swap.</h3>
+<h3>1.6.2.2. The system should validate if the amount of selected token on the connected wallet of a user is sufficient.</h3>
+<h3>1.6.2.3. The system should display the approximate value of defined amount of selected tokens calculated in USD.</h3>
+<h3>1.6.2.4. A user should be able to select the target token from the dropdown list.</h3>
+<h3>1.6.2.5. A user should be able to view and select available swap protocols to be used for the swap.</h3>
+<h3>1.6.2.6. Each swap protocol item should include the name of the protocol, amount to be received, the cost of transaction and total amount of the swap operation.</h3>
+<h3>1.6.3. UI Design</h3>
+<h2 id="1-7-exzo-swap-view-the-details-of-the-deal-rate-fees-route" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-7-exzo-swap-view-the-details-of-the-deal-rate-fees-route">1.7. ExzoSwap: View the details of the deal (rate, fees, route)</a></h2>
+<h3>1.7.1. Summary</h3>
+<p>As a User I want to view the details of the deal (rate, fees, route) so that I could understand the full cost of the swap</p>
+<h3>1.7.2. Acceptance criteria</h3>
+<h3>1.7.2.1. Once swap parameters are set a user should be able to view the conversion rate and the conversion route.</h3>
+<h3>1.7.3. UI Design</h3>
+<h2 id="1-8-exzo-swap-set-additional-parameters-gas-limit-slippage" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-8-exzo-swap-set-additional-parameters-gas-limit-slippage">1.8. ExzoSwap: Set additional parameters (gas limit, slippage)</a></h2>
+<h3>1.8.1. Summary</h3>
+<p>As a User I want to set additional parameters (gas limit, slippage) so that I could optimize transaction cost and rate</p>
+<h3>1.8.2. Acceptance criteria</h3>
+<h3>1.8.2.1. Upon clicking the Swap settings button the advanced swap parameters widget is open</h3>
+<h3>1.8.2.2. A user should be able to set the Gas limit price for the transaction:</h3>
+<ul>
+<li>One of predefined values (Low, Medium or High)</li>
+<li>Custom value</li>
+</ul>
+<h3>1.8.2.3. A user should be able to set the Slippage tolerance value for the transaction:</h3>
+<ul>
+<li>One of predefined values</li>
+<li>Custom value</li>
+</ul>
+<h3>1.8.2.4. Transaction is not executed if it is not possible to complete the transaction within gas price and slippage tolerance limits defined by a user.</h3>
+<h3>1.8.3. UI Design</h3>
+<h2 id="1-9-exzo-swap-confirm-the-deal" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-9-exzo-swap-confirm-the-deal">1.9. ExzoSwap: Confirm the deal</a></h2>
+<h3>1.9.1. Summary</h3>
+<p>As a User I want to confirm the deal so that I could initiate the swap transaction</p>
+<h3>1.9.2. Acceptance criteria</h3>
+<h3>1.9.2.1. After setting all the parameters of the swap a user should be able to initiate the swap execution by clicking on the Swap Currency button.</h3>
+<h3>1.9.2.2. Upon clicking on the Swap Currency button the linked wallet application should be triggered and open for the transaction confirmation.</h3>
+<h3>1.9.2.3. If the wallet is not connected to the application, clicking on the Swap Currency button (or if a user clicks Connect Wallet button) should open the Connect Wallet widget.</h3>
+<h3>1.9.3. UI Design</h3>
+<h2 id="1-10-exzo-wallet-home-page" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-10-exzo-wallet-home-page">1.10. Exzo Wallet: Home page</a></h2>
+<h3>1.10.1. Summary</h3>
+<p>As a Guest I want to view the home page so that I could navigate through the features of the Exzo Wallet app</p>
+<h3>1.10.2. Acceptance criteria</h3>
+<h3>1.10.2.1. A user should be able to open the Exzo Wallet application from the website of Exzo Network.</h3>
+<h3>1.10.2.2. Exzo Wallet app should include the sidebar menu and main content area.</h3>
+<h3>1.10.2.3. Sidebar menu should include the following clickable elements:</h3>
+<ul>
+<li>Exzo logo - redirecting to the main page of Exzo</li>
+<li>Home - redirecting to the home page of Exzo Wallet app</li>
+<li>Wallet - redirecting to the Wallet page</li>
+<li>Staking - redirecting to the Staking page</li>
+<li>Governance - redirecting to the Governance page</li>
+<li>Swap - redirecting to ExzoSwap application</li>
+</ul>
+<h3>1.10.2.4. The main content area should include:</h3>
+<ul>
+<li>Action buttons (Connect wallet, Create wallet, Restore wallet)</li>
+<li>General statistics of all wallets within the account (Total balance, Available balance)</li>
+<li>The list of wallets associated with the account</li>
+<li>Details of each wallet (Name, Address, Type, Total balance, Available balance)</li>
+</ul>
+<h3>1.10.3. UI Design</h3>
+<h2 id="1-11-exzo-wallet-connect-metamask" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-11-exzo-wallet-connect-metamask">1.11. Exzo Wallet: Connect Metamask</a></h2>
+<h3>1.11.1. Summary</h3>
+<p>As a User I want to connect metamask so that I could use funds from my Metamask wallet inside the Exzo Wallet app</p>
+<h3>1.11.2. Acceptance criteria</h3>
+<h3>1.11.2.1. A user should be able to connect their Metamask wallet to the Exzo Wallet application.</h3>
+<h3>1.11.2.2. Once connected, the user&#x27;s Metamask wallet is displayed in the list of wallets inside the Exzo Wallet application.</h3>
+<h2 id="1-12-exzo-wallet-create-a-new-wallet" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-12-exzo-wallet-create-a-new-wallet">1.12. Exzo Wallet: Create a new wallet</a></h2>
+<h3>1.12.1. Summary</h3>
+<p>As a User I want to create a new wallet so that I could generate a new key pair for transactions</p>
+<h3>1.12.2. Acceptance criteria</h3>
+<h3>1.12.2.1. A user should be able to create a wallet by clicking on the Create wallet button at the home page of Exzo Wallet application.</h3>
+<h3>1.12.2.2. The flow of creating a wallet consists of four steps:</h3>
+<ul>
+<li>Step 1 - a user creates a password for the wallet and downloads keystore file to their local machine</li>
+<li>Step 2 - a seed phrase is displayed. At this step a user should also be available to view the wallet’s private key</li>
+<li>Step 3 - a seed phrase confirmation check. At this step a user should confirm the seed phrase displayed at Step 2 by clicking the words in the correct order.</li>
+<li>Step 4 - the confirmation message is displayed. Upon clicking the Access wallet button a user should be redirected to the Wallet page of the newly created wallet.</li>
+</ul>
+<h3>1.12.3. UI Design</h3>
+<h2 id="1-13-exzo-wallet-restore-wallet" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-13-exzo-wallet-restore-wallet">1.13. Exzo Wallet: Restore wallet</a></h2>
+<h3>1.13.1. Summary</h3>
+<p>As a User I want to restore wallet so that I could recover my funds</p>
+<h3>1.13.2. Acceptance criteria</h3>
+<h3>1.13.2.1. Upon clicking on the Restore wallet button from the home page of Exzo Wallet application the Restore wallet widget is displayed.</h3>
+<h3>1.13.2.2. The Restore wallet widget should provide three options for wallet recovery:</h3>
+<ul>
+<li>Uploading keystore file and providing a password to it</li>
+<li>Entering the mnemonic phrase</li>
+<li>Entering the private key of the wallet</li>
+</ul>
+<h3>1.13.2.3. Once wallet recovery is successful, a user should be redirected to the Wallet page of the recovered wallet</h3>
+<h3>1.13.3. UI Design</h3>
+<h2 id="1-14-exzo-wallet-edit-wallet-settings" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-14-exzo-wallet-edit-wallet-settings">1.14. Exzo Wallet: Edit wallet settings</a></h2>
+<h3>1.14.1. Summary</h3>
+<p>As a User I want to edit wallet settings so that I could personalize my wallets in Exzo Wallet app</p>
+<h3>1.14.2. Acceptance criteria</h3>
+<h3>1.14.2.1. A user should be able to access wallet settings from the wallet item in the list of wallets at the home page of Exzo Wallet application or from a wallet page by clicking the Edit button (pencil icon).</h3>
+<h3>1.14.2.2. Once the Edit button is clicked, the Wallet Settings widget is displayed.</h3>
+<h3>1.14.2.3. In the Wallet Settings widget a user should be able to:</h3>
+<ul>
+<li>View wallet address</li>
+<li>Copy wallet address</li>
+<li>Show QR code with wallet address</li>
+<li>View wallet type</li>
+<li>View and edit wallet display name</li>
+<li>View and edit the order of wallet display in the list of wallets</li>
+<li>Remove wallet</li>
+<li>Save changes</li>
+</ul>
+<h3>1.14.3. UI Design</h3>
+<h2 id="1-15-exzo-wallet-copy-wallet-address" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-15-exzo-wallet-copy-wallet-address">1.15. Exzo Wallet: Copy wallet address</a></h2>
+<h3>1.15.1. Summary</h3>
+<p>As a User I want to copy wallet address so that I could add my wallet address to a clipboard with a single click</p>
+<h3>1.15.2. Acceptance criteria</h3>
+<h3>1.15.2.1. A user should be able to copy wallet address to the clipboard by clicking the Copy button from the wallet item in the list of wallets at the home page of Exzo Wallet application, or from Wallet Settings widget, or from a wallet page.</h3>
+<h3>1.15.3. UI Design</h3>
+<h2 id="1-16-exzo-wallet-show-qr-code-with-wallet-address" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-16-exzo-wallet-show-qr-code-with-wallet-address">1.16. Exzo Wallet: Show QR code with wallet address</a></h2>
+<h3>1.16.1. Summary</h3>
+<p>As a User I want to show qr code with wallet address so that I could share my wallet address for scanning with a camera</p>
+<h3>1.16.2. Acceptance criteria</h3>
+<h3>1.16.2.1. A user should be able to display a wallet address with QR-code for scanning by clicking the QR-code button from the Wallet Settings widget, or from a wallet page.</h3>
+<h3>1.16.3. UI Design</h3>
+<h2 id="1-17-exzo-wallet-remove-wallet" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-17-exzo-wallet-remove-wallet">1.17. Exzo Wallet: Remove wallet</a></h2>
+<h3>1.17.1. Summary</h3>
+<p>As a User I want to delete wallet so that I could remove a wallet from my Exzo Wallet app</p>
+<h3>1.17.2. Acceptance criteria</h3>
+<h3>1.17.2.1. A user should be able to remove a wallet from the list of wallets by clicking the Remove wallet button from the Wallet Settings widget.</h3>
+<h3>1.17.2.2. Once the Remove wallet button is clicked, the confirmation widget is displayed.</h3>
+<h3>1.17.2.3. Upon clicking the Remove button at the confirmation widget, the wallet is removed from the list of wallets.</h3>
+<h3>1.17.2.4. A user should be able to access the removed wallet by completing the Restore wallet operation.</h3>
+<h3>1.17.3. UI Design</h3>
+<h2 id="1-18-exzo-wallet-view-the-history-of-transactions" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-18-exzo-wallet-view-the-history-of-transactions">1.18. Exzo Wallet: View the history of transactions</a></h2>
+<h3>1.18.1. Summary</h3>
+<p>As a User I want to view the history of transactions so that I could see all the incoming and outgoing transactions of my wallet</p>
+<h3>1.18.2. Acceptance criteria</h3>
+<h3>1.18.2.1. A user should be able to view the list of transactions for the wallet at the wallet page including:</h3>
+<ul>
+<li>Transaction address</li>
+<li>Timestamp</li>
+<li>Address of the counterparty</li>
+<li>Received/sent amount</li>
+</ul>
+<h3>1.18.3. UI Design</h3>
+<h2 id="1-19-exzo-wallet-view-the-list-of-assets" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-19-exzo-wallet-view-the-list-of-assets">1.19. Exzo Wallet: View the list of assets</a></h2>
+<h3>1.19.1. Summary</h3>
+<p>As a User I want to view the list of assets so that I could see all tokens in my wallet</p>
+<h3>1.19.2. Acceptance criteria</h3>
+<h3>1.19.2.1. A user should be able to view the list of assets on their wallet including:</h3>
+<ul>
+<li>The name of an asset</li>
+<li>Available amount</li>
+<li>Deposited amount</li>
+<li>Borrowed amount</li>
+</ul>
+<h3>1.19.3. UI Design</h3>
+<h2 id="1-20-exzo-wallet-send-assets" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-20-exzo-wallet-send-assets">1.20. Exzo Wallet: Send assets</a></h2>
+<h3>1.20.1. Summary</h3>
+<p>As a User I want to send assets so that I could transfer tokens to another wallet address</p>
+<h3>1.20.2. Acceptance criteria</h3>
+<h3>1.20.2.1. A user should be able to send funds from their wallet to another wallet address.</h3>
+<h3>1.20.2.2. Once a user clicks on the Send button from the wallet page, the Send assets widget is displayed.</h3>
+<h3>1.20.2.3. The flow of sending assets from Exzo Wallet application consists of three steps:</h3>
+<ul>
+<li>Step 1 - select the destination network (Exzo, Ethereum or Binance)</li>
+<li>Step 2 - Enter the amount to be sent, enter recipient’s wallet address and memo. A user should not be able to enter the amount exceeding the total wallet holdings.</li>
+<li>Review and confirm the details of the transaction</li>
+</ul>
+<h3>1.20.2.4. Once the transaction is confirmed it should be sent to a validator node for processing.</h3>
+<h3>1.20.2.5. Once the transaction is accepted by a validator it appears on the list of transactions at the wallet page.</h3>
+<h3>1.20.3. UI Design</h3>
+<h2 id="1-21-exzo-wallet-receive-assets" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-21-exzo-wallet-receive-assets">1.21. Exzo Wallet: Receive assets</a></h2>
+<h3>1.21.1. Summary</h3>
+<p>As a User I want to receive assets so that I could get tokens to my wallet address</p>
+<h3>1.21.2. Acceptance criteria</h3>
+<h3>1.21.3. UI Design</h3>
+<h2 id="1-22-exzo-wallet-stake-exzo-coin-and-get-a-reward" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-22-exzo-wallet-stake-exzo-coin-and-get-a-reward">1.22. Exzo Wallet: Stake ExzoCoin and get a reward</a></h2>
+<h3>1.22.1. Summary</h3>
+<p>As a User I want to stake ExzoCoin so that I could get rewards for securing the network</p>
+<h3>1.22.2. Acceptance criteria</h3>
+<h3>1.22.2.1. A user should be able to stake ExzoCoin for the reward.</h3>
+<h3>1.22.2.2. There should be two options for staking:</h3>
+<ul>
+<li>Running a validator node</li>
+<li>Delegation</li>
+</ul>
+<h3>1.22.2.3. Delegation staking page is open upon clicking Staking in the sidebar menu.</h3>
+<h3>1.22.2.4. A user should be able to view active delegations per selected wallet and for all wallets on separate tabs.</h3>
+<h3>1.22.2.5. Each delegation includes the details: Delegation time, Validator name, Delegated amount.</h3>
+<h3>1.22.2.6. Upon click on Add delegation button the delegation widget is displayed.</h3>
+<h3>1.22.2.7. The delegation flow includes two steps:</h3>
+<ul>
+<li>Step 1 - enter delegation amount and select a validator from the list</li>
+<li>Step 2 - review details and confirm delegation</li>
+</ul>
+<h3>1.22.2.8. Once confirmed, the delegation is displayed on the list of delegations.</h3>
+<h3>1.22.2.9. The reward is paid to the user&#x27;s account proportionally to the amount delegated to the given validator for each block mined by this validator.</h3>
+<h3>1.22.3. UI Design</h3>
+<h2 id="1-23-exzo-wallet-vote-on-governance-proposals" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-23-exzo-wallet-vote-on-governance-proposals">1.23. Exzo Wallet: Vote on governance proposals</a></h2>
+<h3>1.23.1. Summary</h3>
+<p>As a User I want to vote on governance proposals so that I could express my opinion on network changes</p>
+<h3>1.23.2. Acceptance criteria</h3>
+<h3>1.23.2.1. A user should be able to vote for the proposals suggested by validators from the Governance page that should be accessible under by clicking the Governance button in the sidebar menu.</h3>
+<h3>1.23.2.2. The Governance page should include the list of proposals with the following fields:</h3>
+<ul>
+<li>ID/Name of a proposals</li>
+<li>Start/End dates of voting</li>
+<li>User’s votes</li>
+<li>Votes rate</li>
+<li>Winner proposal</li>
+<li>Proposal status</li>
+<li>Details button</li>
+</ul>
+<h3>1.23.2.3. By clicking Details button a user should be able to access the page with details of the selected proposal that include:</h3>
+<ul>
+<li>Proposal’s name, description and address</li>
+<li>Current voting stats</li>
+<li>Voting controls</li>
+</ul>
+<h3>1.23.2.4. To vote on proposals a user should delegate their stake to a validator.</h3>
+<h3>1.23.3. UI Design</h3>
+<h2 id="1-24-exzo-network-run-a-validator-node" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-24-exzo-network-run-a-validator-node">1.24. Exzo Network: Run a validator node</a></h2>
+<h3>1.24.1. Summary</h3>
+<p>As a Validator I want to run a validator node so that I could get rewards for validating transactions</p>
+<h3>1.24.2. Acceptance criteria</h3>
+<h3>1.24.2.1. To earn additional fees for validating transactions on chain a user should run a full validator node.</h3>
+<h3>1.24.2.2. Validator’s account should meet requirements of ExzoCoin amount on the wallet.</h3>
+<h3>1.24.2.3. The flow to setup a full validator node:</h3>
+<ul>
+<li>Launch Cloud instance that meets recommended requirements</li>
+<li>Install Exzo Network build</li>
+<li>Create validator wallet</li>
+<li>Fund validator wallet</li>
+<li>Register Validator on-chain</li>
+<li>Create a validator key</li>
+<li>Run a node</li>
+</ul>
+<h3>1.24.2.4. Detailed description of the installation process can be found by the following <a href="https://docs.fantom.foundation/staking/how-to-run-a-validator-node">reference</a>.</h3>
+<h2 id="1-25-exzo-network-run-a-read-only-node" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-25-exzo-network-run-a-read-only-node">1.25. Exzo Network: Run a read-only node</a></h2>
+<h3>1.25.1. Summary</h3>
+<p>As a User I want to run a read-only node so that I could read on-chain data in real time</p>
+<h3>1.25.2. Acceptance criteria</h3>
+<h3>1.25.2.1. To read data from the network without the ability to validate transactions and earn validator fees a user should be able to run a read-only node.</h3>
+<h3>1.25.2.2. The flow to setup a read-only node:</h3>
+<ul>
+<li>Launch Cloud instance that meets recommended requirements</li>
+<li>Install Exzo Network build</li>
+</ul>
+<h3>1.25.2.3. Detailed description of the installation process can be found by the following <a href="https://docs.fantom.foundation/staking/run-a-read-only-node">reference</a>.</h3>
+<h2 id="1-26-exzo-network-deploy-a-solidity-smart-contract" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-26-exzo-network-deploy-a-solidity-smart-contract">1.26. Exzo Network: Deploy a Solidity smart contract</a></h2>
+<h3>1.26.1. Summary</h3>
+<p>As a User I want to deploy a solidity smart contract so that I could run ERC-20 or ERC-721 smart contracts on Exzo Network</p>
+<h3>1.26.2. Acceptance criteria</h3>
+<h3>1.26.2.1. To deploy a smart contract, a user sends a transaction to the Exzo Network containing smart contract’s bytecode without specifying any recipients.</h3>
+<h3>1.26.2.2. After the contract is deployed, it will be available to all users of the Exzo Network.</h3>
+<h3>1.26.2.3. Smart contracts should have an Exzo Network address like other accounts.</h3>
+<h3>1.26.2.4. Detailed description of the installation process can be found by the following <a href="https://docs.fantom.foundation/tutorials/deploy-a-smart-contract">reference</a>.</h3>
+<h2 id="1-27-exzo-network-create-a-fixed-cap-asset" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-27-exzo-network-create-a-fixed-cap-asset">1.27. Exzo Network: Create a fixed-cap asset</a></h2>
+<h3>1.27.1. Summary</h3>
+<p>As a User I want to create a fixed-cap asset so that I could issue a token with fixed supply</p>
+<h3>1.27.2. Acceptance criteria</h3>
+<h3>1.27.2.1. A user should be able to create a fixed-cap asset on Exzo Network that are fungible tokens for which the supply is determined at the time of asset creation.</h3>
+<h3>1.27.2.2. To deploy a smart contract a user should:</h3>
+<ul>
+<li>Compile a code of the smart contract into bytecode</li>
+<li>Deploy a smart contract by sending a transaction to the Exzo Network</li>
+<li>Navigate to the explorer to check that the token has been created</li>
+</ul>
+<h2 id="exzo-network-create-a-variable-cap-asset" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#exzo-network-create-a-variable-cap-asset">Exzo Network: Create a variable-cap asset</a></h2>
+<h3>1.28.1. Summary</h3>
+<p>As a User I want to create a variable-cap asset so that I could issue a token with variable supply</p>
+<h3>1.28.2. Acceptance criteria</h3>
+<h3>1.28.2.1. A user should be able to create a fixed-cap asset on Exzo Network that are fungible tokens for which the supply is determined at the time of asset creation.</h3>
+<h3>1.28.2.2. To deploy a smart contract a user should:</h3>
+<ul>
+<li>Compile a code of the smart contract into bytecode</li>
+<li>Deploy a smart contract by sending a transaction to the Exzo Network</li>
+<li>Navigate to the explorer to check that the token has been created</li>
+</ul>
+<h3>1.28.2.3. A user should be able to use the _mint function to create additional units of the token.</h3>
+<h2 id="1-29-exzo-network-create-a-local-test-network" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-29-exzo-network-create-a-local-test-network">1.29. Exzo Network: Create a local test network</a></h2>
+<h3>1.29.1. Summary</h3>
+<p>As a User I want to create a local test network so that I could test dApps locally without risk</p>
+<h3>1.29.2. Acceptance criteria</h3>
+<h3>1.29.2.1. A user should be able to set up a local instance of Ezxo Network for testing purposes.</h3>
+<h3>1.29.2.2. To create a local test network a user should:</h3>
+<ul>
+<li>Install Go</li>
+<li>Install build tools</li>
+<li>Install go-lachesis</li>
+<li>Install the Special Fee Contract</li>
+<li>Create a validator</li>
+<li>Setup mainnet genesis</li>
+<li>Add the precompiled contract</li>
+<li>Configure SFC</li>
+<li>Create a validator on the SFC</li>
+</ul>
+<h3>1.29.3. Detailed description of the installation process can be found by the following <a href="https://docs.fantom.foundation/tutorials/create-a-local-test-network">reference</a>.</h3>
+<h2 id="1-30-exzo-scan-main-page" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-30-exzo-scan-main-page">1.30. Exzo Scan: Main page</a></h2>
+<h3>1.30.1. Summary</h3>
+<p>As a Guest I want a main page so that I could navigate through the features of Exzo Scan app</p>
+<h3>1.30.2. Acceptance criteria</h3>
+<h3>1.30.2.1. The main page of the Exzo Scan application should include:</h3>
+<ul>
+<li>Exzo Scan logo</li>
+<li>Main menu (available from all pages)</li>
+<li>Main/Test network switcher</li>
+<li>Search bar with filters (All, Addresses, Tokens, Tags, Labels, Websites)</li>
+<li>Current ExzoCoin price (in USD, in BTC, daily change percent)</li>
+<li>ExzoCoin market cap (in USD, in ExzoCoin)</li>
+<li>Latest block (height, block time, number of transactions, throughput TPS)</li>
+<li>The number of active validators</li>
+<li>Current epoch ID</li>
+<li>ExzoCoin transaction history chart</li>
+<li>The list of latest blocks (block height, time since the validation, validator’s address, transactions count, block time, total amount of ExzoCoin transferred)</li>
+<li>The list of latest transactions (txid, time since the block validation, from/to addresses, transferred amount)</li>
+</ul>
+<h3>1.30.2.2. A user should be able to add Exzo Network to Metamask from the main page of Exzo Scan web application.</h3>
+<h3>1.30.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com">https://ftmscan.com</a></p>
+<h2 id="1-31-exzo-scan-view-top-accounts-by-balance" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-31-exzo-scan-view-top-accounts-by-balance">1.31. Exzo Scan: View top accounts by balance</a></h2>
+<h3>1.31.1. Summary</h3>
+<p>As a Guest I want to view top accounts by balance so that I could check addresses with highest balances</p>
+<h3>1.31.2. Acceptance criteria</h3>
+<h3>1.31.2.1. A user should be able to access Top Accounts by ExzoCoin balance page from the main menu of Exzo Scan application.</h3>
+<h3>1.31.2.2. The page should include:</h3>
+<ul>
+<li>Estimated number of accounts with total ExzoCoin holdings</li>
+<li>The list of accounts (rank, address, name tag, balance, percentage of total cap, tnx count)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.31.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/accounts">https://ftmscan.com/accounts</a></p>
+<h2 id="1-32-exzo-scan-view-account-details" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-32-exzo-scan-view-account-details">1.32. Exzo Scan: View account details</a></h2>
+<h3>1.32.1. Summary</h3>
+<p>As a Guest I want to view account details so that I could check the info of a specific wallet address</p>
+<h3>1.32.2. Acceptance criteria</h3>
+<h3>1.32.2.1. By clicking on account address from any page of Exzo Scan application a user should be able to view the Account Details page.</h3>
+<h3>1.32.2.2. The page should include:</h3>
+<ul>
+<li>Account address with controls to copy the address to the clipboard and show the address as QR code</li>
+<li>The total balance of ExzoCoin on the account</li>
+<li>USD value of ExzoCoin holdings on the account and current ExzoCoin price in USD</li>
+<li>Other token holdings on the account including the button to view the detailed page of token holdings of the account</li>
+<li>The list of transactions of the account (total number of transactions from/to the account, txnid, method, block, age, from/to addresses, txn value, txn fee)</li>
+<li>The list of internal transactions (same structure as above, excluding fee)</li>
+<li>The list of ERC-20 token transactions (same structure as above, including token name)</li>
+<li>The list of ERC-721 token transactions (same structure as above, including token id)</li>
+<li>Analytics charts (including date range selector):<!-- -->
+<ul>
+<li>ExzoCoin balance chart (Exzo Account balance chart, historic USD value chart, highest/lowest ExzoCoin/USD value indicators)</li>
+<li>Transactions (ExzoCoin transactions, unique outgoing addresses, unique incoming addresses)</li>
+<li>Txn fees (used, spent, including totals)</li>
+<li>ExzoCoin transfers (sent, received)</li>
+<li>Token transfers (including token contracts count)</li>
+</ul>
+</li>
+<li>Comments (view and comment)</li>
+</ul>
+<h3>1.32.3. UI Design</h3>
+<p class="break-words">Refer to: <a href="https://ftmscan.com/address/0xebf4fbb9c81b84dd5cf89bc75588e5d0018501b3">https://ftmscan.com/address/0xebf4fbb9c81b84dd5cf89bc75588e5d0018501b3</a></p>
+<h2 id="1-33-exzo-scan-view-token-holdings-by-account" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-33-exzo-scan-view-token-holdings-by-account">1.33. Exzo Scan: View token holdings by account</a></h2>
+<h3>1.33.1. Summary</h3>
+<p>As a Guest I want to view token holdings by account so that I could check tokens amounts per address</p>
+<h3>1.33.2. Acceptance criteria</h3>
+<h3>1.33.2.1. A user should be able to view the page with details on token holdings for a specific account by clicking on the corresponding action button from the Account Details page (if the account has no token holdings, this functionality is not available).</h3>
+<h3>1.33.2.2. The page should include:</h3>
+<ul>
+<li>Total value of account holdings in Exzocoin</li>
+<li>Total value of account holdings in USD</li>
+<li>The list of tokens available on the account (token logo, token name, token address, Symbol, quantity, token price, daily change, value in ExzoCoin, value in USD)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+<li>Search bar</li>
+</ul>
+<h3>1.33.3. UI Design</h3>
+<p class="break-words">Refer to: <a href="https://ftmscan.com/tokenholdings?a=0xff7f8a0b3232fe3b68ea361ddca657c4f7896b43">https://ftmscan.com/tokenholdings?a=0xff7f8a0b3232fe3b68ea361ddca657c4f7896b43</a></p>
+<h2 id="1-34-exzo-scan-view-the-list-of-confirmed-transactions" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-34-exzo-scan-view-the-list-of-confirmed-transactions">1.34. Exzo Scan: View the list of confirmed transactions</a></h2>
+<h3>1.34.1. Summary</h3>
+<p>As a Guest I want to view the list of confirmed transactions so that I could check all the transactions added to the blockchain</p>
+<h3>1.34.2. Acceptance criteria</h3>
+<h3>1.34.2.1. A user should be able to access the Transactions page from the main menu of Exzo Scan application.</h3>
+<h3>1.34.2.2. The page should include:</h3>
+<ul>
+<li>The list of transactions (total number of transactions, txnid, method, block, age, from/to addresses, txn value, txn fee)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.34.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/txs">https://ftmscan.com/txs</a></p>
+<h2 id="1-35-exzo-scan-view-the-list-of-pending-transactions" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-35-exzo-scan-view-the-list-of-pending-transactions">1.35. Exzo Scan: View the list of pending transactions</a></h2>
+<h3>1.35.1. Summary</h3>
+<p>As a Guest I want to view the list of pending transactions so that I could check transactions that are are not yet validated</p>
+<h3>1.35.2. Acceptance criteria</h3>
+<h3>1.35.2.1. A user should be able to access the Pending Transactions page from the main menu of Exzo Scan application.</h3>
+<h3>1.35.2.2. The page should include:</h3>
+<ul>
+<li>The list of pending transactions (total number of pending transactions, txnid, nonce, method, last seen, gas limit, gas price, from/to addresses, txn value)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.35.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/txsPending">https://ftmscan.com/txsPending</a></p>
+<h2 id="1-36-exzo-scan-view-transaction-details" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-36-exzo-scan-view-transaction-details">1.36. Exzo Scan: View transaction details</a></h2>
+<h3>1.36.1. Summary</h3>
+<p>As a Guest I want to view transaction details so that I could check the extended information of a specific transaction</p>
+<h3>1.36.2. Acceptance criteria</h3>
+<h3>1.36.2.1. By clicking on account address from any page of Exzo Scan application a user should be able to view the Account Details page.</h3>
+<h3>1.36.2.2. The page should include:</h3>
+<ul>
+<li>Transaction hash</li>
+<li>Status</li>
+<li>Block height and number of block confirmations</li>
+<li>From/To addresses</li>
+<li>Value (in ExzoCoin and USD)</li>
+<li>Transaction fee (in ExzoCoin and USD)</li>
+<li>Gas limit</li>
+<li>Gas used (amount and percentage of gas limit)</li>
+<li>Gas price (in ExzoCoin and Gwei)</li>
+<li>Nonce</li>
+<li>Input data (including the functionality to decode)</li>
+</ul>
+<h3>1.36.3. UI Design</h3>
+<p class="break-words">Refer to: <a href="https://ftmscan.com/tx/0xcb27811a2975b19608608107f587c46a085d6dc1a234aa35725e8f6866fb1ea2">https://ftmscan.com/tx/0xcb27811a2975b19608608107f587c46a085d6dc1a234aa35725e8f6866fb1ea2</a></p>
+<h2 id="1-37-exzo-scan-view-contract-internal-transactions" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-37-exzo-scan-view-contract-internal-transactions">1.37. Exzo Scan: View contract internal transactions</a></h2>
+<h3>1.37.1. Summary</h3>
+<p>As a Guest I want to view contract internal transactions so that I could check transactions related to a specific smart contract</p>
+<h3>1.37.2. Acceptance criteria</h3>
+<h3>1.37.2.1. A user should be able to access the Contract Internal Transactions page from the main menu of Exzo Scan application.</h3>
+<h3>1.37.2.2. The page should include:</h3>
+<ul>
+<li>The list of contract internal transactions (total number of internal transactions, block height, age, parent txnid, type, from/to addresses, txn value)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.37.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/txsInternal">https://ftmscan.com/txsInternal</a></p>
+<h2 id="1-38-exzo-scan-view-blocks" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-38-exzo-scan-view-blocks">1.38. Exzo Scan: View blocks</a></h2>
+<h3>1.38.1. Summary</h3>
+<p>As a Guest I want to view blocks so that I could check blocks details</p>
+<h3>1.38.2. Acceptance criteria</h3>
+<h3>1.38.2.1. A user should be able to access the Blocks page from the main menu of Exzo Scan application.</h3>
+<h3>1.38.2.2. The page should include:</h3>
+<ul>
+<li>The list of blocks (total number of blocks, block height, age, number of transactions in the block, gas used, block reward)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.38.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/blocks">https://ftmscan.com/blocks</a></p>
+<h2 id="1-39-exzo-scan-view-block-details" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-39-exzo-scan-view-block-details">1.39. Exzo Scan: View block details</a></h2>
+<h3>1.39.1. Summary</h3>
+<p>As a Guest I want to view block details so that I could check the extended information of a specific block</p>
+<h3>1.39.2. Acceptance criteria</h3>
+<h3>1.39.2.1. By clicking on block height (block ID) from any page of Exzo Scan application a user should be able to view the Block page.</h3>
+<h3>1.39.2.2. The page should include:</h3>
+<ul>
+<li>Block height (block ID)</li>
+<li>Timestamp</li>
+<li>Number of transactions (including internal)</li>
+<li>Block reward</li>
+<li>Difficulty</li>
+<li>Total difficulty</li>
+<li>Size</li>
+<li>Gas used</li>
+<li>Extra data</li>
+<li>Hash</li>
+<li>Parent hash</li>
+<li>Sha3Uncles</li>
+<li>Nonce</li>
+<li>Comments (view and comment)</li>
+</ul>
+<h3>1.39.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/block/18241801">https://ftmscan.com/block/18241801</a></p>
+<h2 id="1-40-exzo-scan-view-verified-contracts" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-40-exzo-scan-view-verified-contracts">1.40. Exzo Scan: View verified contracts</a></h2>
+<h3>1.40.1. Summary</h3>
+<p>As a Guest I want to view verified contracts so that I could check smart contracts that have been verified by Exzo Scan app</p>
+<h3>1.40.2. Acceptance criteria</h3>
+<h3>1.40.2.1. A user should be able to access the Contracts page from the main menu of Exzo Scan application.</h3>
+<h3>1.40.2.2. The page should include:</h3>
+<ul>
+<li>Quick filter dropdown (latest, open source, Solidity compiler, Vyper compiler, contract security audit)</li>
+<li>The list of verified contracts (total number of contracts, contract address, contract name, compiler, compiler version, balance on the contract, number of transactions, contract settings marks, verification date, audit mark, license type)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.40.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/contractsVerified">https://ftmscan.com/contractsVerified</a></p>
+<h2 id="1-41-exzo-scan-view-contract-details" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-41-exzo-scan-view-contract-details">1.41. Exzo Scan: View contract details</a></h2>
+<h3>1.41.1. Summary</h3>
+<p>As a Guest I want to view contract details so that I could check the extended information of a specific smart contract</p>
+<h3>1.41.2. Acceptance criteria</h3>
+<h3>1.41.2.1. By clicking on a contract address from any page of Exzo Scan application a user should be able to view the Contract page.</h3>
+<h3>1.41.2.2. The page should include all the elements as Account page plus:</h3>
+<ul>
+<li>Contract code tab including:<!-- -->
+<ul>
+<li>Verification mark</li>
+<li>Contract name</li>
+<li>Compiler Version</li>
+<li>Optimization Enabled</li>
+<li>Other Settings</li>
+<li>Contract Source Code blockUI Design</li>
+<li>Contract Security Audit</li>
+<li>Contract ABI</li>
+<li>Contract Creation Code</li>
+<li>Constructor Arguments</li>
+<li>Deployed ByteCode Sourcemap</li>
+<li>Swarm Source</li>
+</ul>
+</li>
+<li>Read contract tab (read functions and their values)</li>
+<li>Write contract tab (write functions including inputs and Write buttons for their execution)</li>
+<li>Contract events tab (total number of events, txn hash, method, logs)</li>
+</ul>
+<h3>1.41.3. UI Design</h3>
+<p class="break-words">Refer to: <a href="https://ftmscan.com/address/0x0eca94713829bba13877b7c67a9cdd9873522fc0">https://ftmscan.com/address/0x0eca94713829bba13877b7c67a9cdd9873522fc0</a></p>
+<h2 id="1-42-exzo-scan-view-validators-leaderboard" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-42-exzo-scan-view-validators-leaderboard">1.42. Exzo Scan: View validators leaderboard</a></h2>
+<h3>1.42.1. Summary</h3>
+<p>As a Guest I want to view validators leaderboard so that I could check the most performing validators</p>
+<h3>1.42.2. Acceptance criteria</h3>
+<h3>1.42.2.1. A user should be able to access the Validators page from the main menu of Exzo Scan application.</h3>
+<h3>1.42.2.2. The page should include:</h3>
+<ul>
+<li>The list of validators (total number of validators, rank, Address, ID, downtime, self-staked amount, delegated amount, total staked, status)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.42.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/validators">https://ftmscan.com/validators</a></p>
+<h2 id="1-43-exzo-scan-view-epochs" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-43-exzo-scan-view-epochs">1.43. Exzo Scan: View epochs</a></h2>
+<h3>1.43.1. Summary</h3>
+<p>As a Guest I want to view epochs so that I could check the confirmed batches of blocks</p>
+<h3>1.43.2. Acceptance criteria</h3>
+<h3>1.43.2.1. A user should be able to access the Epochs page from the main menu of Exzo Scan application.</h3>
+<h3>1.43.2.2. The page should include:</h3>
+<ul>
+<li>The list of epochs (total number of epochs, epoch ID, end time, total base reward, total fee, total reward)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.43.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/epochs">https://ftmscan.com/epochs</a></p>
+<h2 id="1-44-exzo-scan-view-epoch-details" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-44-exzo-scan-view-epoch-details">1.44. Exzo Scan: View epoch details</a></h2>
+<h3>1.44.1. Summary</h3>
+<p>As a Guest I want to view epoch details so that I could check the extended information of a specific epoch</p>
+<h3>1.44.2. Acceptance criteria</h3>
+<h3>1.44.2.1. By clicking on epoch ID from any page of Exzo Scan application a user should be able to view the Epoch page.</h3>
+<h3>1.44.2.2. The page should include:</h3>
+<ul>
+<li>Epoch ID</li>
+<li>End time</li>
+<li>Total base reward</li>
+<li>Total fee</li>
+<li>Total reward weight</li>
+<li>Comments (view and comment)</li>
+</ul>
+<h3>1.44.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/epoch/40399">https://ftmscan.com/epoch/40399</a></p>
+<h2 id="1-45-exzo-scan-view-erc-20-top-tokens" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-45-exzo-scan-view-erc-20-top-tokens">1.45. Exzo Scan: View ERC-20 top tokens</a></h2>
+<h3>1.45.1. Summary</h3>
+<p>As a Guest I want to view erc-20 top tokens so that I could check the most valuable ERC-20 tokens on chain</p>
+<h3>1.45.2. Acceptance criteria</h3>
+<h3>1.45.2.1. A user should be able to access the Token Tracker page from the main menu of Exzo Scan application.</h3>
+<h3>1.45.2.2. The page should include:</h3>
+<ul>
+<li>The list of ERC-20 tokens (total number of tokens, token name and logo, token price in USD/BTC/EXZO, daily change percent, daily trading volume, market cap, number of token holders)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.45.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/tokens">https://ftmscan.com/tokens</a></p>
+<h2 id="1-46-exzo-scan-view-erc-20-token-transfers" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-46-exzo-scan-view-erc-20-token-transfers">1.46. Exzo Scan: View ERC-20 token transfers</a></h2>
+<h3>1.46.1. Summary</h3>
+<p>As a Guest I want to view erc-20 token transfers so that I could check transactions of ERC-20 tokens</p>
+<h3>1.46.2. Acceptance criteria</h3>
+<h3>1.46.2.1. A user should be able to access the Token Transfers page from the main menu of Exzo Scan application.</h3>
+<h3>1.46.2.2. The page should include:</h3>
+<ul>
+<li>The list of ERC-20 token transactions (total number of transactions, txn hash, age, from/to addresses, value, token name and symbol)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.46.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/tokentxns">https://ftmscan.com/tokentxns</a></p>
+<h2 id="1-47-exzo-scan-view-erc-721-top-tokens" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-47-exzo-scan-view-erc-721-top-tokens">1.47. Exzo Scan: View ERC-721 top tokens</a></h2>
+<h3>1.47.1. Summary</h3>
+<p>As a Guest I want to view erc-721 top tokens so that I could check the most valuable ERC-721 tokens on chain</p>
+<h3>1.47.2. Acceptance criteria</h3>
+<h3>1.47.2.1. A user should be able to access the Non-Fungible Token Tracker page from the main menu of Exzo Scan application.</h3>
+<h3>1.47.2.2. The page should include:</h3>
+<ul>
+<li>The list of non-fungible tokens (total number of NFT token contracts, token name and logo, daily number of transfers, weekly number of transfers)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.47.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/tokens-nft">https://ftmscan.com/tokens-nft</a></p>
+<h2 id="1-48-exzo-scan-view-erc-721-token-transfers" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-48-exzo-scan-view-erc-721-token-transfers">1.48. Exzo Scan: View ERC-721 token transfers</a></h2>
+<h3>1.48.1. Summary</h3>
+<p>As a Guest I want to view erc-721 token transfers so that I could check transactions of ERC-721 tokens</p>
+<h3>1.48.2. Acceptance criteria</h3>
+<h3>1.48.2.1. A user should be able to access the Non-Fungible Token Transfers page from the main menu of Exzo Scan application.</h3>
+<h3>1.48.2.2. The page should include:</h3>
+<ul>
+<li>The list of non-fungible token transactions (total number of transactions, txn hash, age, from/to addresses, token ID, token name and symbol)</li>
+<li>Pagination controls (first page, last page, next page, previous page, current page number, total number of pages, dropdown to set the number of records to show per page)</li>
+</ul>
+<h3>1.48.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/tokentxns-nft">https://ftmscan.com/tokentxns-nft</a></p>
+<h2 id="1-49-exzo-scan-view-charts-and-stats" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-49-exzo-scan-view-charts-and-stats">1.49. Exzo Scan: View charts and stats</a></h2>
+<h3>1.49.1. Summary</h3>
+<p>As a Guest I want to view charts and stats so that I could get visual insights on blockchain data</p>
+<h3>1.49.2. Acceptance criteria</h3>
+<h3>1.49.2.1. A user should be able to access the Exzo Network Charts &amp; Statistics page from the main menu of Exzo Scan application.</h3>
+<h3>1.49.2.2. The page should include the preview images for the following charts:</h3>
+<ul>
+<li>Daily Transactions Chart</li>
+<li>ERC-20 Daily Token Transfer Chart</li>
+<li>Unique Addresses Chart</li>
+<li>Average Block Size Chart</li>
+<li>Average Block Time Chart</li>
+<li>Average Gas Price Chart</li>
+<li>Daily Gas Used Chart</li>
+<li>Block Count and Rewards Chart</li>
+<li>Network Pending Transactions Chart</li>
+<li>Network Transaction Fee Chart</li>
+<li>Network Utilization Chart</li>
+<li>Verified Contracts Chart</li>
+</ul>
+<h3>1.49.2.3. Upon clicking on a chart preview image the page with the selected chart is open</h3>
+<h3>1.49.2.4. A user should be able to print the chart and/or download it in various file formats (png, jpeg, pdf, svg, csv)</h3>
+<h3>1.49.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/charts">https://ftmscan.com/charts</a></p>
+<h2 id="1-50-exzo-scan-view-top-statistics" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-50-exzo-scan-view-top-statistics">1.50. Exzo Scan: View top statistics</a></h2>
+<h3>1.50.1. Summary</h3>
+<p>As a Guest I want to view top statistics so that I could check selected highlights from blockchain data</p>
+<h3>1.50.2. Acceptance criteria</h3>
+<h3>1.50.2.1. A user should be able to access the Top Statistics page from the main menu of Exzo Scan application.</h3>
+<h3>1.50.2.2. The page should include:</h3>
+<ul>
+<li>The list of top EXZO senders (Rank, Address, Total Amount Sent, Percentage)</li>
+<li>The list of top EXZO receivers (Rank, Address, Total Amount Received, Percentage)</li>
+<li>Top Txn Count Sent (Rank, Address, Total Txn, Percentage)</li>
+<li>Top Txn Count Received (Rank, Address, Total Txn, Percentage)</li>
+<li>Top Tokens by Unique Senders (Rank, Token Name, Unique Senders)</li>
+<li>Top Tokens by Unique Receivers (Rank, Token Name, Unique Receivers)</li>
+<li>Top Tokens by Total Uniques (Rank, Token Name, Total Uniques)</li>
+<li>Top Tokens by Txn Count (Tag Cloud, Rank, Token Name, Txn Count)</li>
+<li>Top Accounts by Gas Used (Pie Chart, Rank, Address, Gas Used)</li>
+<li>Top Accounts by Txn Count (Pie Chart, Rank, Address, Txn Count)</li>
+</ul>
+<h3>1.50.2.3. A user should be able to switch between 24 Hours, 3 Days and 7 Days statistics period for all data sets.</h3>
+<h3>1.50.2.4. The Overview tab should include the top ranked address from each data set with the value.</h3>
+<h3>1.50.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/topstat#Overview">https://ftmscan.com/topstat#Overview</a></p>
+<h2 id="1-51-exzo-scan-developer-apis" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-51-exzo-scan-developer-apis">1.51. Exzo Scan: Developer APIs</a></h2>
+<h3>1.51.1. Summary</h3>
+<p>As a Guest I want to developer apis so that I could get information about available API endpoints and methods</p>
+<h3>1.51.2. Acceptance criteria</h3>
+<h3>1.51.2.1. A user should be able to access the Developers API page from the main menu of Exzo Scan application.</h3>
+<h3>1.51.2.2. The page should include the API reference for the following methods:</h3>
+<ul>
+<li>Get EXZO Balance for a single Address</li>
+<li>Get EXZO Balance for multiple Addresses in a single call</li>
+<li>Get a list of &#x27;Normal&#x27; Transactions By Address</li>
+<li>Get a list of &quot;ERC-20 - Token Transfer Events&quot; by Address</li>
+<li>Get a list of &quot;ERC721 - Token Transfer Events&quot; by Address</li>
+<li>Get list of Blocks Validated by Address</li>
+<li>Get Contract ABI for Verified Contract Source Codes</li>
+<li>Get Contract Source Code for Verified Contract Source Codes</li>
+<li>Get ERC20-Token TotalSupply by ContractAddress</li>
+<li>Get ERC20-Token Account Balance for TokenContractAddress</li>
+<li>Get Total Supply of EXZO on the Exzo Network</li>
+<li>Get Validators list on the Exzo Network</li>
+<li>EXZO RPC Nodes</li>
+</ul>
+<h3>1.51.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/apis">https://ftmscan.com/apis</a></p>
+<h2 id="1-52-exzo-scan-verify-contract" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-52-exzo-scan-verify-contract">1.52. Exzo Scan: Verify contract</a></h2>
+<h3>1.52.1. Summary</h3>
+<p>As a Guest I want to verify contract so that I could verify the contract that was deployed to the network</p>
+<h3>1.52.2. Acceptance criteria</h3>
+<h3>1.52.2.1. After deploying the smart contract a user should be able to verify it.</h3>
+<h3>1.52.2.2. A user should be able to access the Verify &amp; Publish Contract Source Code page from the main menu of Exzo Scan application.</h3>
+<h3>1.52.2.3. In order to verify the code of a smart contract a user should:</h3>
+<ul>
+<li>enter the address of the deployed smart contract</li>
+<li>select compiler type from the dropdown</li>
+<li>select open source license type</li>
+<li>agree to the terms of service</li>
+<li>enter the source code of the smart contract</li>
+<li>enter the ABI encoded parameters of deployment</li>
+</ul>
+<h3>1.52.2.4. The Exzo Scan application should verify the code of the smart contract and display errors if any.</h3>
+<h3>1.52.2.5. Once the contract is successfully verified the verification mark is added on the page of the smart contract.</h3>
+<h3>1.52.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/verifyContract">https://ftmscan.com/verifyContract</a></p>
+<h2 id="exzo-scan-bytecode-to-opcode-disassemble" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#exzo-scan-bytecode-to-opcode-disassemble">Exzo Scan: Bytecode to Opcode Disassemble</a></h2>
+<h3>1.53.1. Summary</h3>
+<p>As a Guest I want to bytecode to opcode disassemble so that I could decode the low level Contract ByteCodes to Opcodes</p>
+<h3>1.53.2. Acceptance criteria</h3>
+<h3>1.53.2.1. A user should be able to disassemble the bytecode to opcode at the Bytecode to Opcode Disassembler page that should be accessible from the main menu of Exzo Scan application.</h3>
+<h3>1.53.2.2. The page should include:</h3>
+<ul>
+<li>Bytecode input field</li>
+<li>Decode button</li>
+</ul>
+<h3>1.53.2.3. If the decoding is successful, the opcode is displayed on the page. Otherwise the error message is displayed with the description of the error.</h3>
+<h3>1.53.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/opcode-tool">https://ftmscan.com/opcode-tool</a></p>
+<h2 id="1-54-exzo-scan-broadcast-raw-transaction" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-54-exzo-scan-broadcast-raw-transaction">1.54. Exzo Scan: Broadcast Raw Transaction</a></h2>
+<h3>1.54.1. Summary</h3>
+<p>As a Guest I want to broadcast raw transaction so that I could paste a Signed Raw Transaction in hex format and broadcast it over the Exzo Network</p>
+<h3>1.54.2. Acceptance criteria</h3>
+<h3>1.54.2.1. A user should be able to send a transaction via Broadcast Raw Transaction page that should be accessible from the main menu of Exzo Scan application.</h3>
+<h3>1.54.2.2. The page should include:</h3>
+<ul>
+<li>Transaction hex input field</li>
+<li>Send Transaction button</li>
+</ul>
+<h3>1.54.2.3. If the sending is successful, the txn hash is displayed on the page. Otherwise the error message is displayed with the description of the error.</h3>
+<h3>1.54.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/pushTx">https://ftmscan.com/pushTx</a></p>
+<h2 id="1-55-exzo-scan-registration" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-55-exzo-scan-registration">1.55. Exzo Scan: Registration</a></h2>
+<h3>1.55.1. Summary</h3>
+<p>As a User I want to register an account so that I could get access to the additional functionality of Exzo Scan app</p>
+<h3>1.55.2. Acceptance criteria</h3>
+<h3>1.55.2.1. A user should be able to create an account with Exzo Scan application.</h3>
+<h3>1.55.2.2. Registration form should be opened from the login screen by clicking the Sign Up link.</h3>
+<h3>1.55.2.3. Registration form should include:</h3>
+<ul>
+<li>Username input field (should be unique)</li>
+<li>Email address input field (should be unique)</li>
+<li>Password input field</li>
+<li>Confirm Password input field (should match Password)</li>
+<li>Agree to the TnC check-box</li>
+<li>Opt-in for a newsletter check-box</li>
+<li>Captcha widget</li>
+<li>Create an Account button</li>
+</ul>
+<h3>1.55.2.4. Once a user submits the registration form, the email with an activation link is sent to the registered email address.</h3>
+<h3>1.55.2.5. Once a user activates their account by clicking the activation link, they can login to their profile on Exzo Scan application.</h3>
+<h3>1.55.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/register">https://ftmscan.com/register</a></p>
+<h2 id="1-56-exzo-scan-authentication" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-56-exzo-scan-authentication">1.56. Exzo Scan: Authentication</a></h2>
+<h3>1.56.1. Summary</h3>
+<p>As a User I want to pass an authentication so that I could log into my personal profile on Exzo Scan app</p>
+<h3>1.56.2. Acceptance criteria</h3>
+<h3>1.56.2.1. A user should be able to login to their profile on Exzo Scan application by clicking on the Sign In button at the main menu.</h3>
+<h3>1.56.2.2. Login page should include:</h3>
+<ul>
+<li>Username input field</li>
+<li>Password input field</li>
+</ul>
+<h3>1.56.2.3. A user should be able to recover their password with Forgot password functionality.</h3>
+<h3>1.56.2.4. Once a user is successfully logged in, they should be able to navigate to their profile page.</h3>
+<h3>1.56.2.5. A logged in user should be able to terminate their session by clicking the Sign Out button from the main menu.</h3>
+<h3>1.56.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/login">https://ftmscan.com/login</a></p>
+<h2 id="1-57-exzo-scan-user-profile" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-57-exzo-scan-user-profile">1.57. Exzo Scan: User profile</a></h2>
+<h3>1.57.1. Summary</h3>
+<p>As a User I want to manage user profile so that I could use features available for registered users only</p>
+<h3>1.57.2. Acceptance criteria</h3>
+<h3>1.57.2.1. A registered and logged in user should be able to open their profile page from the main menu.</h3>
+<h3>1.57.2.2. On the profile page a user should be able to:</h3>
+<ul>
+<li>View and change profile details (email address, password, username, profile picture, profile bio, website link)</li>
+<li>Manage watchlist (add address, set events notifications)</li>
+<li>Manage transaction private notes</li>
+<li>Manage address private notes</li>
+<li>Manage token ignore list</li>
+<li>Manage API keys</li>
+<li>Manage verified addresses</li>
+<li>Manage custom ABIs</li>
+</ul>
+<h3>1.57.3. UI Design</h3>
+<p>Refer to: <a href="https://ftmscan.com/myaccount">https://ftmscan.com/myaccount</a></p>
+<div class="xl:max-w-none"><h2 id="tech_perspective" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#tech_perspective">Technical Perspective</a></h2><div class="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-4 dark:border-white/5 sm:grid-cols-2 xl:grid-cols-4"></div></div>
+<h2 id="1-1-purpose" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-1-purpose">1.1. Purpose</a></h2>
+<p>The document defines the understanding of the general objectives for the creation of the project “Exzo Network - innovative blockchain platform - (hereinafter - the software product, System, Platform, “Exzo Network”). The document sets out the main requirements for the software product, defines the scope of this product, the purpose of implementation, restrictions and strategic decisions on project implementation, agreed between the Customer and the Developer. The Software Requirement Specification document is the basis for the software product development process.</p>
+<h2 id="1-2-scope" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-2-scope">1.2. Scope</a></h2>
+<p>This document was created and should be used within the “ExzoCoin” project.</p>
+<p>All persons mentioned in this document, to some extent, participate in the project or are interested in its implementation.</p>
+<p>This document should indicate only the main functions and features of the product, and only those that have been agreed upon by all stakeholders. Functions and features that do not have the status of accepted but are only developments for the future - can not be included in this document without the appropriate designations.</p>
+<h2 id="1-3-definitions-and-acronyms" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-3-definitions-and-acronyms">1.3. Definitions and Acronyms</a></h2>
+<p>SRS - Software Requirements Specification - this document.</p>
+<p>UI - User Interface.</p>
+<p>AWS - Amazon Web Services cloud environment.</p>
+<h2 id="1-4-overall-description" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-4-overall-description">1.4. Overall Description</a></h2>
+<p>“ExzoCoin” project includes two main components:</p>
+<h3>1.4.1. A web-based application that will provide a platform for decentralized cross-chain conversion of digital assets based on 1INCH API.</h3>
+<p>This application will have the similar design and functionality as the 1INCH app (<a href="https://app.1inch.io/">https://app.1inch.io/</a>).</p>
+<p>The process of interacting with the application could be described in the following simplified steps:</p>
+<ul>
+<li>Navigate to the swap application from ExzoCoin website</li>
+<li>Connect wallet with Metamask or WalletConnect</li>
+<li>Buy cryptocurrency via MoonPay</li>
+<li>Use bridges to move coins cross-chain</li>
+<li>Select the chain</li>
+<li>Set the direction of exchange</li>
+<li>View the details of the deal (rate, fees)</li>
+<li>Set additional parameters (gas limit, slippage)</li>
+<li>Confirm the deal</li>
+</ul>
+<h3>1.4.2. A blockchain network based on Fantom blockchain fork that will provide an ecosystem for creating customized blockchains, deploying smart contracts, with full support of Solidity smart contracts.</h3>
+<p>This solution will allow users to perform the following use cases:</p>
+<ul>
+<li>Use Exzo Network official wallet</li>
+<li>Use Exzo Network native coin ExzoCoin</li>
+<li>Connect with Metamask to the testnet and mainnet</li>
+<li>Run a validator node</li>
+<li>Run a read-only node</li>
+<li>Stake native ExzoCoin and get a reward</li>
+<li>Deploy a smart contract written in Solidity</li>
+<li>Create a fixed-cap asset</li>
+<li>Create a variable-cap asset</li>
+<li>Create a local test network</li>
+<li>Explore the network for transactions and other on-chain data</li>
+</ul>
+<h2 id="1-5-exzo-swap-high-level-solution-architecture" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-5-exzo-swap-high-level-solution-architecture">1.5. ExzoSwap High-Level Solution Architecture</a></h2>
+<h3>1.5.1. ExzoSwap FE App is a standalone React application. This application is built into several js and CSS files and is meant to be served from the s3 bucket using cloud front.</h3>
+<h3>1.5.2. ExzoSwap App is integrated with 1INCH API through a secured VPN connection.</h3>
+<h3>1.5.3. A user interacts with ExzoSwap App from their web browser using Metamask extension (or Wallet Connect integration) for making transactions.</h3>
+<h2 id="1-6-exzo-network-high-level-solution-architecture" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-6-exzo-network-high-level-solution-architecture">1.6. Exzo Network High-Level Solution Architecture</a></h2>
+<h3>1.6.1. A Validator node consists of three components: state machine, consensus and networking.</h3>
+<h3>1.6.2. An application can communicate to a node via CLI. Opera network supports auditing by permitting participants to join in post-validation mode.</h3>
+<h3>1.6.3. An observer (or Monitor) node consists of a state machine, post validation component and networking component.</h3>
+<h3>1.6.4. The network supports three types of participants: users, validators and monitors.</h3>
+<h3>1.6.5. Each validating node can create new event blocks. Generation of a new event block indicates that the new block and all of its ancestors have been validated by the creator node of that new event block.</h3>
+<h3>1.6.6. The consensus mechanism is inherited from the Fantom’s Opera Network and described in the Lachesis Whitepaper (<a href="https://arxiv.org/pdf/2108.01900.pdf">https://arxiv.org/pdf/2108.01900.pdf</a>)</h3>
+<div class="xl:max-w-none"><h2 id="user_stories" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#user_stories">User Stories</a></h2><div class="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-4 dark:border-white/5 sm:grid-cols-2 xl:grid-cols-4"></div></div>
+<h2 id="1-the-list-of-user-stories" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/software#1-the-list-of-user-stories">1. The List of User Stories</a></h2>
+<table class="w-full border-collapse border border-slate-400 bg-white text-sm shadow-sm dark:border-slate-500 dark:bg-inherit"><thead><tr><th class="w-1/4 border border-slate-300 px-3 py-0 text-left font-semibold text-slate-900 dark:border-slate-600 dark:text-slate-200"><p>No</p></th><th class="w-1/4 border border-slate-300 px-3 py-0 text-left font-semibold text-slate-900 dark:border-slate-600 dark:text-slate-200"><p>Epic</p></th><th class="w-1/4 border border-slate-300 px-3 py-0 text-left font-semibold text-slate-900 dark:border-slate-600 dark:text-slate-200"><p>Role</p></th><th class="w-1/4 border border-slate-300 px-3 py-0 text-left font-semibold text-slate-900 dark:border-slate-600 dark:text-slate-200"><p>Feature</p></th></tr></thead><tbody><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>1</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>ExzoSwap</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View the main page</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>2</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>ExzoSwap</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Connect a wallet</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>3</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>ExzoSwap</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Buy cryptocurrency with credit card</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>4</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>ExzoSwap</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Transfer coins via bridges</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>5</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>ExzoSwap</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Select the chain for swap</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>6</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>ExzoSwap</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Set the swap parameters</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>7</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>ExzoSwap</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View the details of the deal (rate, fees, route)</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>8</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>ExzoSwap</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Set additional parameters (gas limit, slippage)</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>9</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>ExzoSwap</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Confirm the deal</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>10</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View the home page</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>11</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Connect Metamask</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>12</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Create a new wallet</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>13</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Restore wallet</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>14</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Edit wallet settings</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>15</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Copy wallet address</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>16</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Show QR code with wallet address</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>17</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Delete wallet</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>18</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View the history of transactions</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>19</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View the list of assets</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>20</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Send assets</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>21</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Receive assets</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>22</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Stake ExzoCoin</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>23</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Wallet</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Vote on governance proposals</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>24</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Network</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Validator</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Run a validator node</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>25</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Network</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Run a read-only node</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>26</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Network</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Deploy a Solidity smart contract</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>27</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Network</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Create a fixed-cap asset</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>28</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Network</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Create a variable-cap asset</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>29</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Network</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Create a local test network</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>30</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Main page</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>31</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View top accounts by balance</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>32</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View account details</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>33</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View token holdings by account</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>34</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View the list of confirmed transactions</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>35</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View the list of pending transactions</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>36</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View transaction details</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>37</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View contract internal transactions</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>38</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View blocks</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>39</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View block details</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>40</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View verified contracts</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>41</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View contract details</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>42</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View validators leaderboard</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>43</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View epochs</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>44</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View epoch details</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>45</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View ERC-20 top tokens</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>46</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View ERC-20 token transfers</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>47</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View ERC-721 top tokens</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>48</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View ERC-721 token transfers</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>49</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View charts and stats</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>50</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>View top statistics</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>51</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Developer APIs</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>52</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Verify contract</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>53</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Bytecode to Opcode Disassemble</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>54</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Guest</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Broadcast Raw Transaction</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>55</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Register an account</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>56</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Pass an authentication</p></td></tr><tr><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>57</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Exzo Scan</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>User</p></td><td class="border border-slate-300 px-3 py-0 text-slate-500 dark:border-slate-700 dark:text-slate-200"><p>Manage user profile</p></td></tr></tbody></table></article></main><footer class="mx-auto max-w-2xl space-y-10 pb-16 lg:max-w-5xl"><div class="relative h-8"><form class="absolute inset-0 flex items-center justify-center gap-6 md:justify-start"><p class="text-sm text-zinc-600 dark:text-zinc-400">Was this page helpful?</p><div class="group grid h-8 grid-cols-[1fr,1px,1fr] overflow-hidden rounded-full border border-zinc-900/10 dark:border-white/10"><button type="submit" class="px-3 text-sm font-medium text-zinc-600 transition hover:bg-zinc-900/2.5 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-white/5 dark:hover:text-white" data-response="yes">Yes</button><div class="bg-zinc-900/10 dark:bg-white/10"></div><button type="submit" class="px-3 text-sm font-medium text-zinc-600 transition hover:bg-zinc-900/2.5 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-white/5 dark:hover:text-white" data-response="no">No</button></div></form></div><div class="flex"><div class="flex flex-col items-start gap-3"><a class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-100 py-1 px-3 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800/40 dark:text-zinc-400 dark:ring-1 dark:ring-inset dark:ring-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-300" aria-label="Previous: Architecture" href="/architecture"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -ml-1 rotate-180"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path></svg>Previous</a><a tabindex="-1" aria-hidden="true" class="text-base font-semibold text-zinc-900 transition hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300" href="/architecture">Architecture</a></div><div class="ml-auto flex flex-col items-end gap-3"><a class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-100 py-1 px-3 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800/40 dark:text-zinc-400 dark:ring-1 dark:ring-inset dark:ring-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-300" aria-label="Next: Writing Programs" href="/writing_programs">Next<svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 -mr-1"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path></svg></a><a tabindex="-1" aria-hidden="true" class="text-base font-semibold text-zinc-900 transition hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300" href="/writing_programs">Writing Programs</a></div></div><div class="flex flex-col items-center justify-between gap-5 border-t border-zinc-900/5 pt-8 dark:border-white/5 sm:flex-row"><p class="text-xs text-zinc-600 dark:text-zinc-400">© Copyright <!-- -->2023<!-- -->. All rights reserved.</p><div class="flex gap-4"><a class="group" href="/software#"><span class="sr-only">Follow us on Twitter</span><svg viewBox="0 0 20 20" aria-hidden="true" class="h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:fill-zinc-500"><path d="M16.712 6.652c.01.146.01.29.01.436 0 4.449-3.267 9.579-9.242 9.579v-.003a8.963 8.963 0 0 1-4.98-1.509 6.379 6.379 0 0 0 4.807-1.396c-1.39-.027-2.608-.966-3.035-2.337.487.097.99.077 1.467-.059-1.514-.316-2.606-1.696-2.606-3.3v-.041c.45.26.956.404 1.475.42C3.18 7.454 2.74 5.486 3.602 3.947c1.65 2.104 4.083 3.382 6.695 3.517a3.446 3.446 0 0 1 .94-3.217 3.172 3.172 0 0 1 4.596.148 6.38 6.38 0 0 0 2.063-.817 3.357 3.357 0 0 1-1.428 1.861 6.283 6.283 0 0 0 1.865-.53 6.735 6.735 0 0 1-1.62 1.744Z"></path></svg></a><a class="group" href="/software#"><span class="sr-only">Follow us on GitHub</span><svg viewBox="0 0 20 20" aria-hidden="true" class="h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:fill-zinc-500"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 1.667c-4.605 0-8.334 3.823-8.334 8.544 0 3.78 2.385 6.974 5.698 8.106.417.075.573-.182.573-.406 0-.203-.011-.875-.011-1.592-2.093.397-2.635-.522-2.802-1.002-.094-.246-.5-1.005-.854-1.207-.291-.16-.708-.556-.01-.567.656-.01 1.124.62 1.281.876.75 1.292 1.948.93 2.427.705.073-.555.291-.93.531-1.143-1.854-.213-3.791-.95-3.791-4.218 0-.929.322-1.698.854-2.296-.083-.214-.375-1.09.083-2.265 0 0 .698-.224 2.292.876a7.576 7.576 0 0 1 2.083-.288c.709 0 1.417.096 2.084.288 1.593-1.11 2.291-.875 2.291-.875.459 1.174.167 2.05.084 2.263.53.599.854 1.357.854 2.297 0 3.278-1.948 4.005-3.802 4.219.302.266.563.78.563 1.58 0 1.143-.011 2.061-.011 2.35 0 .224.156.491.573.405a8.365 8.365 0 0 0 4.11-3.116 8.707 8.707 0 0 0 1.567-4.99c0-4.721-3.73-8.545-8.334-8.545Z"></path></svg></a><a class="group" href="/software#"><span class="sr-only">Join our Discord server</span><svg viewBox="0 0 20 20" aria-hidden="true" class="h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:fill-zinc-500"><path d="M16.238 4.515a14.842 14.842 0 0 0-3.664-1.136.055.055 0 0 0-.059.027 10.35 10.35 0 0 0-.456.938 13.702 13.702 0 0 0-4.115 0 9.479 9.479 0 0 0-.464-.938.058.058 0 0 0-.058-.027c-1.266.218-2.497.6-3.664 1.136a.052.052 0 0 0-.024.02C1.4 8.023.76 11.424 1.074 14.782a.062.062 0 0 0 .024.042 14.923 14.923 0 0 0 4.494 2.272.058.058 0 0 0 .064-.02c.346-.473.654-.972.92-1.496a.057.057 0 0 0-.032-.08 9.83 9.83 0 0 1-1.404-.669.058.058 0 0 1-.029-.046.058.058 0 0 1 .023-.05c.094-.07.189-.144.279-.218a.056.056 0 0 1 .058-.008c2.946 1.345 6.135 1.345 9.046 0a.056.056 0 0 1 .059.007c.09.074.184.149.28.22a.058.058 0 0 1 .023.049.059.059 0 0 1-.028.046 9.224 9.224 0 0 1-1.405.669.058.058 0 0 0-.033.033.056.056 0 0 0 .002.047c.27.523.58 1.022.92 1.495a.056.056 0 0 0 .062.021 14.878 14.878 0 0 0 4.502-2.272.055.055 0 0 0 .016-.018.056.056 0 0 0 .008-.023c.375-3.883-.63-7.256-2.662-10.246a.046.046 0 0 0-.023-.021Zm-9.223 8.221c-.887 0-1.618-.814-1.618-1.814s.717-1.814 1.618-1.814c.908 0 1.632.821 1.618 1.814 0 1-.717 1.814-1.618 1.814Zm5.981 0c-.887 0-1.618-.814-1.618-1.814s.717-1.814 1.618-1.814c.908 0 1.632.821 1.618 1.814 0 1-.71 1.814-1.618 1.814Z"></path></svg></a></div></div></footer></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"sections":[{"title":"Vision Documentation","id":"vision_doc"},{"title":"Quick Start","id":"quick_start"},{"title":"Specifications","id":"specifications"},{"title":"Technical Perspective","id":"tech_perspective"},{"title":"User Stories","id":"user_stories"}],"title":"Software"},"__N_SSG":true},"page":"/software","query":{},"buildId":"yAxsx7lFrlH2wGZWlIy3B","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
